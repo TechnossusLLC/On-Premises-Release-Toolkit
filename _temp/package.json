@@ -1,0 +1,14 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "temp to avoid warnings",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": "http://norepo/but/nowarning",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
