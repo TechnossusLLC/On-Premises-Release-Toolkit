@@ -1,8 +1,8 @@
 ﻿{
-  "id": "d7054920-9d3a-11e5-8d5a-3550b6c8f69f",
-  "name": "IISApplicationDeployment",
-  "friendlyName": "IIS Application Deployment",
-  "description": "Tear down and generate a new IIS Application on any machine with IIS 8.",
+  "id": "bd08eadf-5b48-4ad2-a85d-334f9b86755e",
+  "name": "IISVirtualDirectoryDeployment",
+  "friendlyName": "IIS Virtual Directory Deployment",
+  "description": "Tear down and generate a new Virtual Directory on any machine with IIS 8.",
   "helpMarkDown": "",
   "category": "Deploy",
   "visibility": [                
@@ -11,25 +11,32 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 1,
-    "Patch": 7
+    "Minor": 0,
+    "Patch": 1
   },  
   "minimumAgentVersion": "1.90.0",
   "inputs": [
     {
-      "name": "name",
+      "name": "parentName",
       "type": "string",
-      "label": "IIS Application Name",
+      "label": "IIS Parent Application Name",
       "defaultValue": "",
       "required": true      
     },
     {
-      "name": "hostName",
+      "name": "name",
       "type": "string",
       "label": "Hostname",
       "defaultValue": "",
       "required": true,
       "helpMarkDown": "Host name to be bound to the IIS Application."
+    },
+    {
+      "name": "path",
+      "type": "string",
+      "label": "Folder Name on the Host Machine",     
+      "required": true,
+      "helpMarkDown": "This folder will live under the path C:\\Apps."     
     },
     {
       "name": "deployUser",
@@ -46,34 +53,20 @@
       "required": true,
       "helpMarkDown": "Slot"
     },
-    {
-      "name": "serviceAccountName",
-      "type": "string",
-      "label": "Service Account Name",
-      "defaultValue": "",
-      "helpMarkDown": "Name of the Managed Service Account that will be used for the IIS App pool.",
-      "required": true
-    },
+  
     {
       "name": "serverName",
       "type": "string",
       "label": "Server Name",
       "defaultValue": "",
       "required": true
-    },
-    {
-      "name": "certificateThumbprint",
-      "type": "string",
-      "label": "SSL Cert Thumbprint",
-      "defaultValue": "",
-      "required": false
     }
   ],
   
   "instanceNameFormat": "IIS Deployment",
   "execution": {
     "PowerShell": {
-      "target": "$(currentDirectory)\\DeployIIS.ps1",
+      "target": "$(currentDirectory)\\DeployVirtualDirectory.ps1",
       "argumentFormat": "",
       "workingDirectory": "$(currentDirectory)"
     }
