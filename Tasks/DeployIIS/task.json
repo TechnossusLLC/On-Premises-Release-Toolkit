@@ -70,7 +70,7 @@
     }
   ],
   
-  "instanceNameFormat": "IIS Deployment: $(name)",
+  "instanceNameFormat": "IIS Deployment",
   "execution": {
     "PowerShell": {
       "target": "$(currentDirectory)\\DeployIIS.ps1",
