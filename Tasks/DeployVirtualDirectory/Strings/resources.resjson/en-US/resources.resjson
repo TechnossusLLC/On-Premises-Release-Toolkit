@@ -2,19 +2,18 @@
 // GENERATED FILE - DO NOT EDIT DIRECTLY
 // *******************************************************
 {
-  "loc.friendlyName": "IIS Application Deployment",
+  "loc.friendlyName": "IIS Virtual Directory Deployment",
   "loc.helpMarkDown": "",
-  "loc.description": "Tear down and generate a new IIS Application on any machine with IIS 8.",
-  "loc.instanceNameFormat": "IIS Deployment: $(name)",
-  "loc.input.label.name": "IIS Application Name",
-  "loc.input.label.hostName": "Hostname",
-  "loc.input.help.hostName": "Host name to be bound to the IIS Application.",
+  "loc.description": "Tear down and generate a new Virtual Directory on any machine with IIS 8.",
+  "loc.instanceNameFormat": "IIS Deployment",
+  "loc.input.label.parentName": "IIS Parent Application Name",
+  "loc.input.label.name": "Hostname",
+  "loc.input.help.name": "Host name to be bound to the IIS Application.",
+  "loc.input.label.path": "Folder Name on the Host Machine",
+  "loc.input.help.path": "This folder will live under the path C:\\Apps.",
   "loc.input.label.deployUser": "Deployment User Name",
   "loc.input.help.deployUser": "The username of the deployment user.",
-  "loc.input.label.deployPass": "Slot",
+  "loc.input.label.deployPass": "Deployment Password",
   "loc.input.help.deployPass": "Slot",
-  "loc.input.label.serviceAccountName": "Web Deploy Package",
-  "loc.input.help.serviceAccountName": "Path to the Visual Studio Web Deploy package under the default artifact directory.",
-  "loc.input.label.serverName": "Additional Arguments",
-  "loc.input.label.certThumbprint": "Additional Arguments"
+  "loc.input.label.serverName": "Server Name"
 }

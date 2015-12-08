@@ -2,7 +2,7 @@
 // GENERATED FILE - DO NOT EDIT DIRECTLY
 // *******************************************************
 {
-  "id": "DCBEF2C9-E4F4-4929-82B2-EA7FC9166109",
+  "id": "d7054920-9d3a-11e5-8d5a-3550b6c8f69f",
   "name": "IISApplicationDeployment",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
@@ -11,11 +11,11 @@
   "visibility": [
     "Release"
   ],
-  "author": "Microsoft Corporation",
+  "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 0,
-    "Patch": 19
+    "Minor": 1,
+    "Patch": 7
   },
   "minimumAgentVersion": "1.90.0",
   "inputs": [
@@ -46,7 +46,7 @@
       "type": "string",
       "label": "ms-resource:loc.input.label.deployPass",
       "defaultValue": "",
-      "required": false,
+      "required": true,
       "helpMarkDown": "ms-resource:loc.input.help.deployPass"
     },
     {
@@ -65,16 +65,16 @@
       "required": true
     },
     {
-      "name": "certThumbprint",
+      "name": "certificateThumbprint",
       "type": "string",
-      "label": "ms-resource:loc.input.label.certThumbprint",
+      "label": "ms-resource:loc.input.label.certificateThumbprint",
       "defaultValue": "",
       "required": false
     }
   ],
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
   "execution": {
-    "AzurePowerShell": {
+    "PowerShell": {
       "target": "$(currentDirectory)\\DeployIIS.ps1",
       "argumentFormat": "",
       "workingDirectory": "$(currentDirectory)"
