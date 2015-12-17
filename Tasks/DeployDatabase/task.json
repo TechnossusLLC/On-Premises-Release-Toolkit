@@ -12,7 +12,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 0
+    "Patch": 1
   },  
   "minimumAgentVersion": "1.90.0",
   "inputs": [
@@ -33,7 +33,7 @@
     },
     {
       "name": "dacpacLocation",
-      "type": "string",
+      "type": "filePath",
       "label": "Dacpac Location",     
       "required": true,
       "helpMarkDown": "The drop location of the built dacpac."     
