@@ -1,0 +1,52 @@
+﻿{
+  "id": "ef103b61-90e2-4901-b64e-f75475fe20f6",
+  "name": "DatabaseDeployment",
+  "friendlyName": "Database Deployment",
+  "description": "Deploy a database using a dacpac.",
+  "helpMarkDown": "",
+  "category": "Deploy",
+  "visibility": [                
+                "Release"
+                ],
+  "author": "Technossus LLC",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 0
+  },  
+  "minimumAgentVersion": "1.90.0",
+  "inputs": [
+    {
+      "name": "dbServerName",
+      "type": "string",
+      "label": "Database Server Name",
+      "defaultValue": "",
+      "required": true      
+    },
+    {
+      "name": "databaseName",
+      "type": "string",
+      "label": "Database Name",
+      "defaultValue": "",
+      "required": true
+     
+    },
+    {
+      "name": "dacpacLocation",
+      "type": "string",
+      "label": "Dacpac Location",     
+      "required": true,
+      "helpMarkDown": "The drop location of the built dacpac."     
+    }
+  
+  ],
+  
+  "instanceNameFormat": "Database Deployment",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\DeployDatabase.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

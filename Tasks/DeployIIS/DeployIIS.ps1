@@ -30,7 +30,7 @@ Function Get-PSCredential($User,$Password)
 }    
    
 $credential = Get-PSCredential -User $deployUser -Password $deployPass
-$session = New-PSSession $serverName -Credential $credential 
+$session = New-PSSession $serverName -Credential $credential
 
 invoke-command -session $session -scriptblock {
     Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint)
@@ -46,7 +46,6 @@ invoke-command -session $session -scriptblock {
      Write-Host "Adding web-server"
      Add-WindowsFeature web-server
     }
- 
    
     $physicalPath = "C:\apps\" + $name
 

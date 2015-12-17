@@ -7,16 +7,9 @@
     [string]$serverName
 )
  
-Function Get-PSCredential($User,$Password)
-{
- $SecPass = convertto-securestring -asplaintext -string $Password -force
- $Creds = new-object System.Management.Automation.PSCredential -argumentlist $User,$SecPass
- Return $Creds
-}    
+Import-Module ../Common/CommonAuth   
    
-$credential = Get-PSCredential -User $deployUser -Password $deployPass
-$session = New-PSSession $serverName -Credential $credential
- 
+$session = New-Deploy-Session -ServerName $serverName -DeployUser $deployUser -DeployPass $deployPass
 
 invoke-command -session $session -scriptblock {
     Param([string]$parentName, [string]$name, [string]$path)
