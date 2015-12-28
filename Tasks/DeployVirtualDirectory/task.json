@@ -50,8 +50,8 @@
       "type": "string",
       "label": "Deployment Password",
       "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "Slot"
+      "required": true
+     
     },
   
     {

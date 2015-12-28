@@ -1,0 +1,92 @@
+{
+    "manifestVersion": 1,
+    "id": "on-premises-build-tasks",
+    "name": "On-Premises Release Toolkit",
+    "version": "0.0.2",
+    "publisher": "technossusllc",
+    "public": false,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tools for deploying web applications and databases on-premises.",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "DeployDatabase"
+        },
+        {
+            "path": "DeployIIS"
+        },
+        {
+            "path": "DeployVirtualDirectory"
+        },
+        {
+            "path": "UpdateAppSettings"
+        },
+        {
+            "path": "UpdateConnectionString"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "deploy-database",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeployDatabase"
+            }
+        },
+        {
+            "id": "deploy-iis",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeployIIS"
+            }
+        }
+        ,
+        {
+            "id": "deploy-virtual-directory",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeployVirtualDirectory"
+            }
+        }
+        ,
+        {
+            "id": "update-app-settings",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "UpdateAppSettings"
+            }
+        }
+        ,
+        {
+            "id": "update-connection-string",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "UpdateConnectionString"
+            }
+        }
+    ]
+}
