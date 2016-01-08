@@ -7,15 +7,9 @@ Param(
     [string]$serverName
 )
 
-Function Get-PSCredential($User,$Password)
-{
- $SecPass = convertto-securestring -asplaintext -string $Password -force
- $Creds = new-object System.Management.Automation.PSCredential -argumentlist $User,$SecPass
- Return $Creds
-}    
-   
-$credential = Get-PSCredential -User $deployUser -Password $deployPass
-$session = New-PSSession $serverName -Credential $credential
+. .\CommonAuth.ps1 
+ 
+ $session = New-Deploy-Session($deployUser, $deployPass, $serverName)
 
 invoke-command -session $session -scriptblock {
     Param(

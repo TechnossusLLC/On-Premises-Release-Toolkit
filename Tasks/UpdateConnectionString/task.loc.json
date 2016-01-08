@@ -14,7 +14,7 @@
   "demands": [],
   "version": {
     "Major": "0",
-    "Minor": "1",
+    "Minor": "2",
     "Patch": "0"
   },
   "minimumAgentVersion": "1.83.0",
@@ -41,10 +41,18 @@
       "required": true
     },
     {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
       "name": "deployUser",
       "type": "string",
       "label": "ms-resource:loc.input.label.deployUser",
-      "required": true,
+      "required": false,
+      "groupName": "advanced",
       "helpMarkDown": "ms-resource:loc.input.help.deployUser"
     },
     {
@@ -52,14 +60,8 @@
       "type": "string",
       "label": "ms-resource:loc.input.label.deployPass",
       "defaultValue": "",
-      "required": true
-    },
-    {
-      "name": "serverName",
-      "type": "string",
-      "label": "ms-resource:loc.input.label.serverName",
-      "defaultValue": "",
-      "required": true
+      "groupName": "advanced",
+      "required": false
     }
   ],
   "execution": {

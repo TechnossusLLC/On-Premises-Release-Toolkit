@@ -22,12 +22,7 @@ Param(
     $certificateThumbprint
 )
  
-Function Get-PSCredential($User,$Password)
-{
- $SecPass = convertto-securestring -asplaintext -string $Password -force
- $Creds = new-object System.Management.Automation.PSCredential -argumentlist $User,$SecPass
- Return $Creds
-}    
+. .\CommonAuth.ps1 
 
 if($deployUser){  
     "Using credentials"

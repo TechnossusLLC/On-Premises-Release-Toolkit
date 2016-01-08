@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.0.4",
+    "version": "0.0.7",
     "publisher": "technossusllc",
     "public": false,
     "targets": [
@@ -19,13 +19,13 @@
     },
     "files": [
         {
-            "path": "DeployDatabase"
+            "path": "DatabaseDeployment"
         },
         {
-            "path": "DeployIIS"
+            "path": "IISApplicationDeployment"
         },
         {
-            "path": "DeployVirtualDirectory"
+            "path": "IISVirtualDirectoryDeployment"
         },
         {
             "path": "UpdateAppSettings"
@@ -42,7 +42,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "DeployDatabase"
+                "name": "DatabaseDeployment"
             }
         },
         {
@@ -52,7 +52,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "DeployIIS"
+                "name": "IISApplicationDeployment"
             }
         }
         ,
@@ -63,7 +63,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "DeployVirtualDirectory"
+                "name": "IISVirtualDirectoryDeployment"
             }
         }
         ,

@@ -6,13 +6,14 @@
   "loc.helpMarkDown": "",
   "loc.description": "Tear down and generate a new Virtual Directory on any machine with IIS 8.",
   "loc.instanceNameFormat": "IIS Deployment",
+  "loc.group.displayName.advanced": "Advanced",
   "loc.input.label.parentName": "IIS Parent Application Name",
   "loc.input.label.name": "Hostname",
   "loc.input.help.name": "Host name to be bound to the IIS Application.",
   "loc.input.label.path": "Folder Name on the Host Machine",
   "loc.input.help.path": "This folder will live under the path C:\\Apps.",
+  "loc.input.label.serverName": "Server Name",
   "loc.input.label.deployUser": "Deployment User Name",
-  "loc.input.help.deployUser": "The username of the deployment user.",
-  "loc.input.label.deployPass": "Deployment Password",
-  "loc.input.label.serverName": "Server Name"
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password"
 }

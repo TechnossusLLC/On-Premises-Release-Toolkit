@@ -34,7 +34,7 @@
     "minimatch": "^2.0.7",
     "minimist": "^1.1.1",
     "mocha": "^2.3.3",
-    "run-sequence": "^1.0.2",
+    "run-sequence": "^1.1.5",
     "semver": "^4.3.3",
     "shelljs": "^0.3.0",
     "through2": "^0.6.3",

@@ -9,8 +9,8 @@
   "loc.input.help.webConfig": "The path of the config file on the destination machine",
   "loc.input.label.connectionStringName": "Name",
   "loc.input.label.newConnectionStringValue": "Value",
+  "loc.input.label.serverName": "Server Name",
   "loc.input.label.deployUser": "Deployment User Name",
-  "loc.input.help.deployUser": "The username of the deployment user.",
-  "loc.input.label.deployPass": "Deployment Password",
-  "loc.input.label.serverName": "Server Name"
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password"
 }

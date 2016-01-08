@@ -22,6 +22,7 @@ temp/
 _build/
 _package/
 _working/
+_temp/
 
 # Roslyn cache directories
 *.ide/
