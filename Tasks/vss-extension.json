@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "publisher": "technossusllc",
     "public": false,
     "targets": [

@@ -2,19 +2,12 @@
 // GENERATED FILE - DO NOT EDIT DIRECTLY
 // *******************************************************
 {
-  "loc.friendlyName": "IIS Application Deployment",
+  "loc.friendlyName": "Database Deployment",
   "loc.helpMarkDown": "",
-  "loc.description": "Tear down and generate a new IIS Application on any machine with IIS 8.",
-  "loc.instanceNameFormat": "IIS Deployment",
-  "loc.input.label.name": "IIS Application Name",
-  "loc.input.label.hostName": "Hostname",
-  "loc.input.help.hostName": "Host name to be bound to the IIS Application.",
-  "loc.input.label.deployUser": "Deployment User Name",
-  "loc.input.help.deployUser": "The username of the deployment user.",
-  "loc.input.label.deployPass": "Deployment Password",
-  "loc.input.help.deployPass": "Slot",
-  "loc.input.label.serviceAccountName": "Service Account Name",
-  "loc.input.help.serviceAccountName": "Name of the Managed Service Account that will be used for the IIS App pool.",
-  "loc.input.label.serverName": "Server Name",
-  "loc.input.label.certificateThumbprint": "SSL Cert Thumbprint"
+  "loc.description": "Deploy a database using a dacpac.",
+  "loc.instanceNameFormat": "Database Deployment",
+  "loc.input.label.dbServerName": "Database Server Name",
+  "loc.input.label.databaseName": "Database Name",
+  "loc.input.label.dacpacLocation": "Dacpac Location",
+  "loc.input.help.dacpacLocation": "The drop location of the built dacpac."
 }

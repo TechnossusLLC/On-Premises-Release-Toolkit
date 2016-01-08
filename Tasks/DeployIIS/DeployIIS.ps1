@@ -5,18 +5,18 @@ Param(
     
     [string] [Parameter(Mandatory = $true)]
     $hostName,
-    
-    [string] [Parameter(Mandatory = $true)]
-    $deployUser,
-    
-    [string] [Parameter(Mandatory = $true)]
-    $deployPass,
-    
+
     [string] [Parameter(Mandatory = $true)]
     $serviceAccountName,
     
     [string] [Parameter(Mandatory = $true)]
     $serverName,
+    
+    [string] [Parameter(Mandatory = $false)]
+    $deployUser,
+    
+    [string] [Parameter(Mandatory = $false)]
+    $deployPass,   
     
     [string] [Parameter(Mandatory = $false)]
     $certificateThumbprint
@@ -28,10 +28,15 @@ Function Get-PSCredential($User,$Password)
  $Creds = new-object System.Management.Automation.PSCredential -argumentlist $User,$SecPass
  Return $Creds
 }    
-   
-$credential = Get-PSCredential -User $deployUser -Password $deployPass
-$session = New-PSSession $serverName -Credential $credential
 
+if($deployUser){  
+    "Using credentials"
+    $credential = Get-PSCredential -User $deployUser -Password $deployPass
+    $session = New-PSSession $serverName -Credential $credential
+ } else {
+    $session = New-PSSession $serverName     
+ }
+ 
 invoke-command -session $session -scriptblock {
     Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint)
  

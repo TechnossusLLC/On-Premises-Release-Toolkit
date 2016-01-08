@@ -648,7 +648,7 @@ declare module "child_process" {
     }): ChildProcess;
     export function spawnSync(command: string, args?: string[], options?: {
         cwd?: string;
-        input?: string | Buffer;
+        input?: string;
         stdio?: any;
         env?: any;
         uid?: number;

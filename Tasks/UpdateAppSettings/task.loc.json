@@ -2,44 +2,43 @@
 // GENERATED FILE - DO NOT EDIT DIRECTLY
 // *******************************************************
 {
-  "id": "bd08eadf-5b48-4ad2-a85d-334f9b86755e",
-  "name": "IISVirtualDirectoryDeployment",
+  "id": "f1bc3a30-a4ec-11e5-99c4-5f908e4518fb",
+  "name": "UpdateAppSettings",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
-  "helpMarkDown": "ms-resource:loc.helpMarkDown",
-  "category": "Deploy",
+  "author": "Technossus LLC",
+  "category": "Utility",
   "visibility": [
     "Release"
   ],
-  "author": "Technossus LLC",
+  "demands": [],
   "version": {
-    "Major": 1,
-    "Minor": 0,
-    "Patch": 1
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "1"
   },
-  "minimumAgentVersion": "1.90.0",
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
   "inputs": [
     {
-      "name": "parentName",
+      "name": "webConfig",
       "type": "string",
-      "label": "ms-resource:loc.input.label.parentName",
+      "label": "ms-resource:loc.input.label.webConfig",
       "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.webConfig"
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.key",
       "required": true
     },
     {
-      "name": "name",
+      "name": "value",
       "type": "string",
-      "label": "ms-resource:loc.input.label.name",
-      "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "ms-resource:loc.input.help.name"
-    },
-    {
-      "name": "path",
-      "type": "string",
-      "label": "ms-resource:loc.input.label.path",
-      "required": true,
-      "helpMarkDown": "ms-resource:loc.input.help.path"
+      "label": "ms-resource:loc.input.label.value",
+      "required": true
     },
     {
       "name": "deployUser",
@@ -63,12 +62,12 @@
       "required": true
     }
   ],
-  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
   "execution": {
     "PowerShell": {
-      "target": "$(currentDirectory)\\DeployVirtualDirectory.ps1",
+      "target": "$(currentDirectory)\\UpdateAppSettings.ps1",
       "argumentFormat": "",
       "workingDirectory": "$(currentDirectory)"
     }
-  }
+  },
+  "helpMarkDown": "ms-resource:loc.helpMarkDown"
 }

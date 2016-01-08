@@ -8,6 +8,15 @@ Function Get-PSCredential($User,$Password)
 Function New-Deploy-Session($DeployUser, $DeployPass, $ServerName){
 	$credential = Get-PSCredential -User $DeployUser -Password $DeployPass
 	return New-PSSession $ServerName -Credential $credential
+    
+    if($DeployUser){  
+        "Using Credentials"
+        $credential = Get-PSCredential -User $DeployUser -Password $DeployPass
+        return New-PSSession $ServerName -Credential $credential
+    } else {
+        return New-PSSession $ServerName     
+    }
+ 
 }
 
 Export-ModuleMember -Function New-Deploy-Session
