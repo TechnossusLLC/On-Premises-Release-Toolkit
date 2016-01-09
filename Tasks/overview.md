@@ -1,8 +1,7 @@
 ## Deploy Applications to your On-Premises Servers ##
-This extension add tasks for deploying IIS Applications, Virtual Directories, Databases, and updating app settings and connection strings. Dragging and dropping these tasks into 
-Release Management vNext is much easier than building your own Powershell scripts. All we require is that your build agent is on the same network as the 
-machine you intend to deploy to. This can either be via an Azure virtual network or by hosting your own build agent On-Premises.
-![Requirements](../img/reqts.png)
+This extension add tasks for deploying IIS Applications, Virtual Directories, Databases, and updating app settings and connection strings. Dragging and dropping these tasks into Release Management vNext is much easier than building your own Powershell scripts. All we require is that your build agent is on the same network as the machine you intend to deploy to. This can either be via an Azure virtual network or by hosting your own build agent On-Premises.
+
+![Tasks](tasks.png)
 
 ### Tasks Supported by this extension
 - Deploying an IIS Application
@@ -26,4 +25,4 @@ machine you intend to deploy to. This can either be via an Azure virtual network
 1. Open the Visual Studio Team Service account where you installed the extension.
 
 ### Learn more about this extension
-The source to this extension is available on GitHub: [https://www.technossus.com](https://www.technossus.com).
+We have lots of documentation available on our website: [https://www.technossus.com](https://www.technossus.com).

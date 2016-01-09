@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.0.7",
+    "version": "0.1.4",
     "publisher": "technossusllc",
     "public": false,
     "targets": [
@@ -27,20 +27,20 @@
     },
     "links": {
         "home": {
-            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+            "uri": "https://www.technossus.com"
         },
         "support": {
-            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+            "uri": "https://www.technossus.com"
         },
         "repository": {
-            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+            "uri": "https://www.technossus.com"
         },
         "issues": {
-            "uri": "https://github.com/jgarverick/RequirementsIntegrator/issues"
+            "uri": "https://www.technossus.com"
         }
     },
     "branding": {
-        "color": "rgb(220, 235, 252)",
+        "color": "#EEEEEE",
         "theme": "light"
     },
     "files": [

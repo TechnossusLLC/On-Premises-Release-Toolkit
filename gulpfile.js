@@ -139,7 +139,8 @@ gulp.task('copyMiscFiles', function () {
             path.join(__dirname, 'Tasks', 'extension-icon.png'), 
             path.join(__dirname, 'Tasks', 'vss-extension.json'),
             path.join(__dirname, 'Tasks', 'overview.md'),
-            path.join(__dirname, 'Tasks', 'LICENSE.txt')])
+            path.join(__dirname, 'Tasks', 'LICENSE.txt'),
+            path.join(__dirname, 'Tasks', 'tasks.png')])
         .pipe(gulp.dest(_buildRoot));
 
 });
