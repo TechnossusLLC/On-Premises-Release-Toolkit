@@ -40,8 +40,8 @@
         }
     },
     "branding": {
-        "color": "#EEEEEE",
-        "theme": "light"
+        "color": "#ED2939",
+        "theme": "dark"
     },
     "files": [
         {
