@@ -9,13 +9,39 @@
         {
             "id": "Microsoft.VisualStudio.Services"
         }
-    ],    
+    ],
     "description": "Tools for deploying web applications and databases on-premises.",
     "categories": [
         "Build and release"
     ],
     "icons": {
-        "default": "extension-icon.png"        
+        "default": "extension-icon.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "LICENSE.txt"
+        }
+    },
+    "links": {
+        "home": {
+            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+        },
+        "support": {
+            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+        },
+        "repository": {
+            "uri": "https://github.com/jgarverick/RequirementsIntegrator"
+        },
+        "issues": {
+            "uri": "https://github.com/jgarverick/RequirementsIntegrator/issues"
+        }
+    },
+    "branding": {
+        "color": "rgb(220, 235, 252)",
+        "theme": "light"
     },
     "files": [
         {
@@ -54,8 +80,7 @@
             "properties": {
                 "name": "IISApplicationDeployment"
             }
-        }
-        ,
+        },
         {
             "id": "deploy-virtual-directory",
             "type": "ms.vss-distributed-task.task",
@@ -65,8 +90,7 @@
             "properties": {
                 "name": "IISVirtualDirectoryDeployment"
             }
-        }
-        ,
+        },
         {
             "id": "update-app-settings",
             "type": "ms.vss-distributed-task.task",
@@ -76,8 +100,7 @@
             "properties": {
                 "name": "UpdateAppSettings"
             }
-        }
-        ,
+        },
         {
             "id": "update-connection-string",
             "type": "ms.vss-distributed-task.task",

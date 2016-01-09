@@ -135,7 +135,11 @@ gulp.task('copyPowershellCommon', function () {
 });
 
 gulp.task('copyMiscFiles', function () {
-    return gulp.src([path.join(__dirname, 'Tasks', 'extension-icon.png'), path.join(__dirname, 'Tasks', 'vss-extension.json')])
+    return gulp.src([
+            path.join(__dirname, 'Tasks', 'extension-icon.png'), 
+            path.join(__dirname, 'Tasks', 'vss-extension.json'),
+            path.join(__dirname, 'Tasks', 'overview.md'),
+            path.join(__dirname, 'Tasks', 'LICENSE.txt')])
         .pipe(gulp.dest(_buildRoot));
 
 });
