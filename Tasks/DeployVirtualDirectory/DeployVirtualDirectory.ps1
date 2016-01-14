@@ -1,9 +1,20 @@
 ﻿Param(
+    [string] [Parameter(Mandatory = $true)]
     [string]$parentName,
+    
+    [string] [Parameter(Mandatory = $true)]
     [string]$name,
+    
+    [string] [Parameter(Mandatory = $true)]
     [string]$path,
+    
+    [string] [Parameter(Mandatory = $false)]
     [string]$deployUser,
+    
+    [string] [Parameter(Mandatory = $false)]
     [string]$deployPass,
+    
+    [string] [Parameter(Mandatory = $true)]
     [string]$serverName
 )
 

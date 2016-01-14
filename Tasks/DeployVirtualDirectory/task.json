@@ -33,15 +33,15 @@
         {
             "name": "name",
             "type": "string",
-            "label": "Hostname",
+            "label": "Virtual Directory Name",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Host name to be bound to the IIS Application."
+            "helpMarkDown": "Path of the Virtual Directory under the IIS Application"
         },
         {
             "name": "path",
             "type": "string",
-            "label": "Folder Name on the Host Machine",
+            "label": "Application Name",
             "required": true,
             "helpMarkDown": "This folder will live under the path C:\\Apps."
         },
