@@ -25,4 +25,4 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 1. Open the Visual Studio Team Service account where you installed the extension.
 
 ### Learn more about this extension
-We have lots of documentation available on our website: [https://www.technossus.com](https://www.technossus.com).
+We have lots of documentation available over at github!: [https://github.com/TechnossusLLC/On-Premises-Release-Toolkit](https://github.com/TechnossusLLC/On-Premises-Release-Toolkit).

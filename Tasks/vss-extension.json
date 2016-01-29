@@ -2,9 +2,9 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.1.4",
+    "version": "0.1.8",
     "publisher": "technossusllc",
-    "public": false,
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -27,16 +27,16 @@
     },
     "links": {
         "home": {
-            "uri": "https://www.technossus.com"
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit"
         },
         "support": {
-            "uri": "https://www.technossus.com"
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit/issues"
         },
         "repository": {
-            "uri": "https://www.technossus.com"
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit"
         },
         "issues": {
-            "uri": "https://www.technossus.com"
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit/issues"
         }
     },
     "branding": {

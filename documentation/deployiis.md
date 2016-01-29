@@ -9,7 +9,7 @@ This plugin allows you deploy an IIS Application. For every deploy, it follows t
 5. Creates a new Application
 6. If SSL Thumbprint is provided, the script will also bind port 443 to the site and map the certificate. By default, the creation of the Application already binds port 80 to the Host Name provided.
 
-![Plugin Config](applicationdeploy.png)
+![Plugin Config](applicationDeploy.PNG)
 
 ## Inputs
 ------------------
