@@ -6,11 +6,9 @@ Function Get-PSCredential($User,$Password)
 }    
 
 Function New-Deploy-Session($DeployUser, $DeployPass, $ServerName){
-	$credential = Get-PSCredential -User $DeployUser -Password $DeployPass
-	return New-PSSession $ServerName -Credential $credential
-    
+	Write-Host "Attempting to create session to $ServerName"
     if($DeployUser){  
-        "Using Credentials"
+        Write-Host "Using Credentials"
         $credential = Get-PSCredential -User $DeployUser -Password $DeployPass
         return New-PSSession $ServerName -Credential $credential
     } else {

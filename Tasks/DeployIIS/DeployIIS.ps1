@@ -22,15 +22,9 @@ Param(
     $certificateThumbprint
 )
  
-. .\CommonAuth.ps1 
+Import-Module .\CommonAuth.psm1 
 
-if($deployUser){  
-    "Using credentials"
-    $credential = Get-PSCredential -User $deployUser -Password $deployPass
-    $session = New-PSSession $serverName -Credential $credential
- } else {
-    $session = New-PSSession $serverName     
- }
+$session = New-Deploy-Session -DeployUser $deployUser -DeployPass $deployPass -ServerName $serverName
  
 invoke-command -session $session -scriptblock {
     Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint)

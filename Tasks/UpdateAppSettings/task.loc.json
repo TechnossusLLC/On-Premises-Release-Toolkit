@@ -13,9 +13,9 @@
   ],
   "demands": [],
   "version": {
-    "Major": "0",
-    "Minor": "2",
-    "Patch": "0"
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "1"
   },
   "minimumAgentVersion": "1.83.0",
   "groups": [

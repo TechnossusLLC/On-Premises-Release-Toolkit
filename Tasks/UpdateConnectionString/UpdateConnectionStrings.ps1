@@ -7,7 +7,7 @@ Param(
     [string]$serverName
 )
 
-. .\CommonAuth.ps1 
+. .\CommonAuth.psm1 
  
  $session = New-Deploy-Session($deployUser, $deployPass, $serverName)
 

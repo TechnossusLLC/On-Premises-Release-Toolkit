@@ -129,7 +129,7 @@ gulp.task('copyPowershellCommon', function () {
     var folders = getFolders(_buildRoot);
 
     var tasks = folders.map(function (folder) {
-        return gulp.src(path.join(__dirname, 'Tasks', 'Common', '**/*.ps1'))
+        return gulp.src(path.join(__dirname, 'Tasks', 'Common', '**/*.psm1'))
             .pipe(gulp.dest(path.join(_buildRoot, folder)));
     });
 });

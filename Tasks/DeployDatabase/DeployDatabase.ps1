@@ -22,7 +22,7 @@ if (! $dacpacLocation)
     exit 1
 }
 
-. .\CommonAuth.ps1
+. .\CommonAuth.psm1
 
 $user=[Security.Principal.WindowsIdentity]::GetCurrent()
 
