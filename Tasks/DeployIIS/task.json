@@ -76,7 +76,7 @@
             "groupName": "advanced",
             "required": false
         },
-         {
+        {
             "name": "overridePath",
             "type": "string",
             "label": "Path Override",

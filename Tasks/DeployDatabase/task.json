@@ -1,62 +1,59 @@
 ﻿{
-  "id": "ef103b61-90e2-4901-b64e-f75475fe20f6",
-  "name": "DatabaseDeployment",
-  "friendlyName": "Database Deployment",
-  "description": "Deploy a database using a dacpac.",
-  "helpMarkDown": "",
-  "category": "Deploy",
-  "visibility": [                
-                "Release"
-                ],
-  "author": "Technossus LLC",
-  "version": {
-    "Major": 1,
-    "Minor": 2,
-    "Patch": 1
-  },  
-  "demands" : [
-    "SqlPackage"  
-  ],
-  "minimumAgentVersion": "1.90.0",
-  "inputs": [
-    {
-      "name": "dbServerName",
-      "type": "string",
-      "label": "Database Server Name",
-      "defaultValue": "",
-      "required": true      
+    "id": "ef103b61-90e2-4901-b64e-f75475fe20f6",
+    "name": "DatabaseDeployment",
+    "friendlyName": "Database Deployment",
+    "description": "Deploy a database using a dacpac.",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 1,
+        "Minor": 2,
+        "Patch": 2
     },
-    {
-      "name": "databaseName",
-      "type": "string",
-      "label": "Database Name",
-      "defaultValue": "",
-      "required": true
-     
-    },
-    {
-      "name": "dacpacLocation",
-      "type": "filePath",
-      "label": "Dacpac Location",     
-      "required": true,
-      "helpMarkDown": "The drop location of the built dacpac."     
-    },
-    {
-      "name":"additionalVariables",
-      "type": "string",
-      "label": "SqlCmd Variables",
-      "defaultValue": "",
-      "required": false,
-      "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. \"foo1\":\"bar1\",\"foo2\":\"bar2\"" 
-    }  
-  ],
-  
-  "instanceNameFormat": "Database Deployment",
-  "execution": {
-    "PowerShell": {
-      "target": "$(currentDirectory)\\DeployDatabase.ps1",
-      "argumentFormat": "",
-      "workingDirectory": "$(currentDirectory)"
+    "demands": [
+        "SqlPackage"
+    ],
+    "minimumAgentVersion": "1.90.0",
+    "inputs": [
+        {
+            "name": "dbServerName",
+            "type": "string",
+            "label": "Database Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "databaseName",
+            "type": "string",
+            "label": "Database Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "dacpacLocation",
+            "type": "filePath",
+            "label": "Dacpac Location",
+            "required": true,
+            "helpMarkDown": "The drop location of the built dacpac."
+        },
+        {
+            "name": "additionalVariables",
+            "type": "string",
+            "label": "SqlCmd Variables",
+            "required": false,
+            "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. 'foo1':'bar1','foo2':'bar2'"
+        }
+    ],
+    "instanceNameFormat": "Database Deployment",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\DeployDatabase.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
     }
-  }
 }

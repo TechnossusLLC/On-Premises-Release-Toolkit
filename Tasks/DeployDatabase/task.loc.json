@@ -15,7 +15,7 @@
   "version": {
     "Major": 1,
     "Minor": 2,
-    "Patch": 1
+    "Patch": 2
   },
   "demands": [
     "SqlPackage"
@@ -47,9 +47,8 @@
       "name": "additionalVariables",
       "type": "string",
       "label": "ms-resource:loc.input.label.additionalVariables",
-      "defaultValue": "",
       "required": false,
-      "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. \"foo1\":\"bar1\",\"foo2\":\"bar2\""
+      "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. 'foo1':'bar1','foo2':'bar2'"
     }
   ],
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
