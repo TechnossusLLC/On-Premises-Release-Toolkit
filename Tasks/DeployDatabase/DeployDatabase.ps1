@@ -1,7 +1,8 @@
 ﻿Param(
     [string]$dbServerName,
     [string]$databaseName,
-    [string]$dacpacLocation
+    [string]$dacpacLocation,
+    [string]$additionalVariables
 )
 
 if (! $dbServerName)
@@ -38,18 +39,29 @@ register-objectevent -in $dacService -eventname Message -source "msg" -action { 
 
 $dp = [Microsoft.SqlServer.Dac.DacPackage]::Load($dacpacLocation)
 $dacpacoptions = "C:\Drops\Powershell Scripts\dbDeployOptions.publish.xml"
-
+    
 Write-Host $dacpac
 Write-Host $dacpacoptions
 
 $dacProfile = [Microsoft.SqlServer.Dac.DacProfile]::Load($dacpacoptions)
+
+$deployOptions = $dacProfile.DeployOptions
+
+if($additionalVariables -eq $null)
+{
+    $additionalVariables.Split(",") | ForEach {
+        $varArray = $_.Split(":");
+        Write-Host $varArray[0]
+        $deployOptions.SqlCmdVariableValues.Add($varArray[0], $varArray[1]);
+    }
+}
 
 Write-Host "Deploying database $databaseName to server $dbServerName"
 try{
 $dacService.deploy($dp, $databaseName, $true, $dacProfile.DeployOptions) 
 } catch [Microsoft.SqlServer.Dac.DacServicesException] {
    
-    Resolve-Error $_
+    Resolve-Error -Error $_
     throw ('Deployment failed: ''{0}'' Reason: ''{1}'' ''{2}''' -f $_.Exception.Message, $_.Exception.InnerException.Message, $_.Exception.InnerException.InnerException.Message)
 }
 unregister-event -source "msg" 

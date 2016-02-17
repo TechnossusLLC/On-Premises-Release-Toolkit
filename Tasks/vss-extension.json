@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.1.17",
+    "version": "0.1.23",
     "publisher": "technossusllc",
     "public": true,
     "targets": [
@@ -58,6 +58,9 @@
         },
         {
             "path": "UpdateConnectionString"
+        },
+         {
+            "path": "RequireSSLRedirect"
         }
     ],
     "contributions": [
@@ -109,6 +112,16 @@
             ],
             "properties": {
                 "name": "UpdateConnectionString"
+            }
+        },
+        {
+            "id": "require-ssl-redirect",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "RequireSSLRedirect"
             }
         }
     ]

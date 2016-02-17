@@ -19,7 +19,10 @@ Param(
     $deployPass,   
     
     [string] [Parameter(Mandatory = $false)]
-    $certificateThumbprint
+    $certificateThumbprint,
+    
+    [string] [Parameter(Mandatory = $false)]
+    $overridePath
 )
  
 Import-Module .\CommonAuth.psm1 
@@ -27,7 +30,7 @@ Import-Module .\CommonAuth.psm1
 $session = New-Deploy-Session -DeployUser $deployUser -DeployPass $deployPass -ServerName $serverName
  
 invoke-command -session $session -scriptblock {
-    Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint)
+    Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint, [string]$overridePath)
  
     Set-ExecutionPolicy RemoteSigned
  
@@ -42,6 +45,12 @@ invoke-command -session $session -scriptblock {
     }
    
     $physicalPath = "C:\apps\" + $name
+    
+    if([string]::IsNullOrEmpty($overridePath)){
+      $physicalPath = "C:\apps\" + $name
+    } else {      
+      $physicalPath = $overridePath    
+    }
 
     try
     {
@@ -112,7 +121,7 @@ invoke-command -session $session -scriptblock {
     }
 
  
-} -ArgumentList $name,$hostName,$serviceAccountName, $certificateThumbprint
+} -ArgumentList $name, $hostName, $serviceAccountName, $certificateThumbprint, $overridePath
  
     Remove-PSSession $session
 

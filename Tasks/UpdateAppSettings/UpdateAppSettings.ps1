@@ -7,9 +7,9 @@ Param(
     [string]$serverName
 )
 
-. .\CommonAuth.psm1 
- 
- $session = New-Deploy-Session($deployUser, $deployPass, $serverName)
+Import-Module .\CommonAuth.psm1 
+
+$session = New-Deploy-Session -DeployUser $deployUser -DeployPass $deployPass -ServerName $serverName
 
 invoke-command -session $session -scriptblock {
     Param(

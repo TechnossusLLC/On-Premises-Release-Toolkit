@@ -9,5 +9,6 @@
   "loc.input.label.dbServerName": "Database Server Name",
   "loc.input.label.databaseName": "Database Name",
   "loc.input.label.dacpacLocation": "Dacpac Location",
-  "loc.input.help.dacpacLocation": "The drop location of the built dacpac."
+  "loc.input.help.dacpacLocation": "The drop location of the built dacpac.",
+  "loc.input.label.additionalVariables": "SqlCmd Variables"
 }

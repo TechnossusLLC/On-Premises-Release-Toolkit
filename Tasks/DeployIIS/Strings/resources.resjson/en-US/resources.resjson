@@ -16,5 +16,7 @@
   "loc.input.label.certificateThumbprint": "SSL Cert Thumbprint",
   "loc.input.label.deployUser": "Deployment User Name",
   "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
-  "loc.input.label.deployPass": "Deployment Password"
+  "loc.input.label.deployPass": "Deployment Password",
+  "loc.input.label.overridePath": "Path Override",
+  "loc.input.help.overridePath": "By default, the application will be deployed to C:\\Apps\\{App Name}. You can override this to be the path of your choosing."
 }

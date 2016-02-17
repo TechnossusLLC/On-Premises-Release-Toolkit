@@ -5,6 +5,7 @@
   "loc.friendlyName": "Update Connection String",
   "loc.description": "Allows connection strings to be updated in a web.config or app.config",
   "loc.instanceNameFormat": "UpdateAppSettings $(message)",
+  "loc.group.displayName.advanced": "Advanced",
   "loc.input.label.webConfig": "Web config path",
   "loc.input.help.webConfig": "The path of the config file on the destination machine",
   "loc.input.label.connectionStringName": "Name",

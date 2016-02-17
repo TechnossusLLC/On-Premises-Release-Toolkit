@@ -1,19 +1,20 @@
-{
-    "id": "2d15b88e-f58b-48dd-8b17-e8f35594e4ab",
-    "name": "UpdateConnectionString",
-    "friendlyName": "Update Connection String",
-    "description": "Allows connection strings to be updated in a web.config or app.config",
-    "author": "Technossus LLC",
-    "category": "Utility",
+﻿{
+    "id": "b4f0cca8-bf1d-4844-b103-0d3deecc35e4",
+    "name": "RequireSSLRedirect",
+    "friendlyName": "Enable SSL Redirect",
+    "description": "Adds SSL redirect to any site so that if it is accessed with a non-SSL binding, it will redirect to the SSL version",
+    "helpMarkDown": "",
+    "category": "Deploy",
     "visibility": [
         "Release"
     ],
-    "demands": [],
+    "author": "Technossus LLC",
     "version": {
-        "Major": "1",
-        "Minor": "1",
-        "Patch": "0"
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 5
     },
+    "minimumAgentVersion": "1.90.0",
     "groups": [
         {
             "name": "advanced",
@@ -21,27 +22,12 @@
             "isExpanded": false
         }
     ],
-    "minimumAgentVersion": "1.83.0",
-    "instanceNameFormat": "UpdateAppSettings $(message)",
     "inputs": [
         {
-            "name": "webConfig",
+            "name": "name",
             "type": "string",
-            "label": "Web config path",
+            "label": "IIS Application Name",
             "defaultValue": "",
-            "required": false,
-            "helpMarkDown": "The path of the config file on the destination machine"
-        },
-        {
-            "name": "connectionStringName",
-            "type": "string",
-            "label": "Name",
-            "required": true
-        },
-        {
-            "name": "newConnectionStringValue",
-            "type": "string",
-            "label": "Value",
             "required": true
         },
         {
@@ -66,11 +52,20 @@
             "defaultValue": "",
             "groupName": "advanced",
             "required": false
+        },
+        {
+            "name": "installWebPlatformInstaller",
+            "type": "boolean",
+            "label": "Install Web Platform Installer",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "required": false
         }
     ],
+    "instanceNameFormat": "Enable SSL Redirect",
     "execution": {
         "PowerShell": {
-            "target": "$(currentDirectory)\\UpdateConnectionStrings.ps1",
+            "target": "$(currentDirectory)\\RequireSSLRedirect.ps1",
             "argumentFormat": "",
             "workingDirectory": "$(currentDirectory)"
         }

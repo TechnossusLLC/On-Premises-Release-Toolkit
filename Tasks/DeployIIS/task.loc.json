@@ -14,8 +14,8 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 2,
-    "Patch": 6
+    "Minor": 3,
+    "Patch": 0
   },
   "minimumAgentVersion": "1.90.0",
   "groups": [
@@ -77,6 +77,15 @@
       "label": "ms-resource:loc.input.label.deployPass",
       "defaultValue": "",
       "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "overridePath",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.overridePath",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.overridePath",
       "required": false
     }
   ],

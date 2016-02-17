@@ -11,8 +11,8 @@
     "author": "Technossus LLC",
     "version": {
         "Major": 1,
-        "Minor": 2,
-        "Patch": 6
+        "Minor": 3,
+        "Patch": 0
     },
     "minimumAgentVersion": "1.90.0",
     "groups": [
@@ -74,6 +74,15 @@
             "label": "Deployment Password",
             "defaultValue": "",
             "groupName": "advanced",
+            "required": false
+        },
+         {
+            "name": "overridePath",
+            "type": "string",
+            "label": "Path Override",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "helpMarkDown": "By default, the application will be deployed to C:\\Apps\\{App Name}. You can override this to be the path of your choosing.",
             "required": false
         }
     ],

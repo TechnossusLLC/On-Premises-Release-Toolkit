@@ -1,0 +1,16 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Enable SSL Redirect",
+  "loc.helpMarkDown": "",
+  "loc.description": "Adds SSL redirect to any site so that if it is accessed with a non-SSL binding, it will redirect to the SSL version",
+  "loc.instanceNameFormat": "Enable SSL Redirect",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.name": "IIS Application Name",
+  "loc.input.label.serverName": "Server Name",
+  "loc.input.label.deployUser": "Deployment User Name",
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password",
+  "loc.input.label.installWebPlatformInstaller": "Install Web Platform Installer"
+}
