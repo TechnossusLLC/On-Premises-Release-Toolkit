@@ -13,12 +13,19 @@
   ],
   "author": "Technossus LLC",
   "version": {
-    "Major": 1,
-    "Minor": 2,
-    "Patch": 2
+    "Major": 2,
+    "Minor": 0,
+    "Patch": 0
   },
   "demands": [
     "SqlPackage"
+  ],
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
   ],
   "minimumAgentVersion": "1.90.0",
   "inputs": [
@@ -48,7 +55,56 @@
       "type": "string",
       "label": "ms-resource:loc.input.label.additionalVariables",
       "required": false,
+      "groupName": "advanced",
       "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. 'foo1':'bar1','foo2':'bar2'"
+    },
+    {
+      "name": "allowIncompatiblePlatform",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.allowIncompatiblePlatform",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "backupDatabaseBeforeChanges",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.backupDatabaseBeforeChanges",
+      "defaultValue": "true",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "blockOnPossibleDataLoss",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.blockOnPossibleDataLoss",
+      "defaultValue": "true",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "createNewDatabase",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.createNewDatabase",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "deployDatabaseInSingleUserMode",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.deployDatabaseInSingleUserMode",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "generateSmartDefaults",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.generateSmartDefaults",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
     }
   ],
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
