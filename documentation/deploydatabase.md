@@ -2,6 +2,8 @@
 
 This plugin allows you to deploy a database using a dacpac. In order for the dacpac to deploy, the TFS Service account will also need 'sysadmin' access to the db server.
 
+You will need to have SSDT installed on your build agent. You can get the correct version [here](https://www.microsoft.com/en-us/download/details.aspx?id=43370)
+
 ![Plugin Config](databasedeployconfig.png)
 
 ## Inputs
