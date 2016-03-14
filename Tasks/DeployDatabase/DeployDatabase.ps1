@@ -72,7 +72,7 @@ $dacService = new-object Microsoft.SqlServer.Dac.DacServices $connectionString
 
 register-objectevent -in $dacService -eventname Message -source "msg" -action { out-host -in $Event.SourceArgs[1].Message.Message } | Out-Null
 
-$dp = [Microsoft.SqlServer.Dac.DacPackage]::Load($dacpacLocation)
+$dp = [Microsoft.SqlServer.Dac.DacPackage]::Load($dacpacLocation, [Microsoft.SqlServer.Dac.DacSchemaModelStorageType]::File)
 
 $deployOptions = New-Object Microsoft.SqlServer.Dac.DacDeployOptions
 
