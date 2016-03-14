@@ -22,7 +22,10 @@ Param(
     $certificateThumbprint,
     
     [string] [Parameter(Mandatory = $false)]
-    $overridePath
+    $overridePath,
+    
+    [string] [Parameter(Mandatory = $false)]
+    $enableThirtyTwoBit
 )
  
 Import-Module .\CommonAuth.psm1 
@@ -30,7 +33,7 @@ Import-Module .\CommonAuth.psm1
 $session = New-Deploy-Session -DeployUser $deployUser -DeployPass $deployPass -ServerName $serverName
  
 invoke-command -session $session -scriptblock {
-    Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint, [string]$overridePath)
+    Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint, [string]$overridePath, [string]$enableThirtyTwoBit)
  
     Set-ExecutionPolicy RemoteSigned
  
@@ -82,8 +85,17 @@ invoke-command -session $session -scriptblock {
     
      $appPool = New-WebAppPool -Name $name
      Set-ItemProperty IIS:\AppPools\$name -name processModel -value @{userName="$serviceAccountName";identitytype=3}
-     Set-ItemProperty IIS:\AppPools\$name managedRuntimeVersion v4.0
-    
+     Set-ItemProperty IIS:\AppPools\$name managedRuntimeVersion v4.0  
+     
+    Try
+    {   
+        Write-Host "32-bit Mode: $enableThirtyTwoBit"
+        Set-ItemProperty IIS:\AppPools\$name -name enable32BitAppOnWin64 -Value "$enableThirtyTwoBit"
+    }
+    Catch
+    {
+        
+    }
  
     "Creating Folder"
     # Create Folder for the website
@@ -121,7 +133,7 @@ invoke-command -session $session -scriptblock {
     }
 
  
-} -ArgumentList $name, $hostName, $serviceAccountName, $certificateThumbprint, $overridePath
+} -ArgumentList $name, $hostName, $serviceAccountName, $certificateThumbprint, $overridePath, $enableThirtyTwoBit
  
     Remove-PSSession $session
 

@@ -14,8 +14,8 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 3,
-    "Patch": 0
+    "Minor": 4,
+    "Patch": 6
   },
   "minimumAgentVersion": "1.90.0",
   "groups": [
@@ -86,6 +86,14 @@
       "defaultValue": "",
       "groupName": "advanced",
       "helpMarkDown": "ms-resource:loc.input.help.overridePath",
+      "required": false
+    },
+    {
+      "name": "enableThirtyTwoBit",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.enableThirtyTwoBit",
+      "defaultValue": "false",
+      "groupName": "advanced",
       "required": false
     }
   ],

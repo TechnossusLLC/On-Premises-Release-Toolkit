@@ -11,8 +11,8 @@
     "author": "Technossus LLC",
     "version": {
         "Major": 1,
-        "Minor": 3,
-        "Patch": 0
+        "Minor": 4,
+        "Patch": 6
     },
     "minimumAgentVersion": "1.90.0",
     "groups": [
@@ -83,6 +83,14 @@
             "defaultValue": "",
             "groupName": "advanced",
             "helpMarkDown": "By default, the application will be deployed to C:\\Apps\\{App Name}. You can override this to be the path of your choosing.",
+            "required": false
+        },
+        {
+            "name": "enableThirtyTwoBit",
+            "type": "boolean",
+            "label": "Enable 32-bit mode",
+            "defaultValue": "false",
+            "groupName": "advanced",            
             "required": false
         }
     ],
