@@ -85,18 +85,11 @@ invoke-command -session $session -scriptblock {
     
      $appPool = New-WebAppPool -Name $name
      Set-ItemProperty IIS:\AppPools\$name -name processModel -value @{userName="$serviceAccountName";identitytype=3}
-     Set-ItemProperty IIS:\AppPools\$name managedRuntimeVersion v4.0  
-     
-    Try
-    {   
-        Write-Host "32-bit Mode: $enableThirtyTwoBit"
-        Set-ItemProperty IIS:\AppPools\$name -name enable32BitAppOnWin64 -Value "$enableThirtyTwoBit"
-    }
-    Catch
-    {
-        
-    }
- 
+     Set-ItemProperty IIS:\AppPools\$name managedRuntimeVersion v4.0    
+    
+    Write-Host "32-bit Mode: $enableThirtyTwoBit"
+    Set-ItemProperty IIS:\AppPools\$name -name enable32BitAppOnWin64 -Value "$enableThirtyTwoBit"
+   
     "Creating Folder"
     # Create Folder for the website
     if(!(Test-Path $physicalPath)) {
@@ -109,13 +102,8 @@ invoke-command -session $session -scriptblock {
     $site = Get-WebSite | where { $_.Name -eq $name }
     if($site -eq $null)
     {
-     Write-Host "Creating site: $name $physicalPath"
- 
-     # TODO:
-     New-WebSite -PhysicalPath $physicalPath -Name $name -HostHeader $hostName -ApplicationPool $name
-
-     "Creating App"
-     #New-WebApplication -Site $name -Name $name -PhysicalPath $physicalPath -ApplicationPool $name
+     Write-Host "Creating site: $name $physicalPath"   
+     New-WebSite -PhysicalPath $physicalPath -Name $name -HostHeader $hostName -ApplicationPool $name  
     }
 
     if($certificateThumbprint){
