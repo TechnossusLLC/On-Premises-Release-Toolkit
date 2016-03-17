@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.3.10",
+    "version": "0.4.0",
     "publisher": "technossusllc",
     "public": true,
     "targets": [
@@ -61,6 +61,9 @@
         },
          {
             "path": "RequireSSLRedirect"
+        },
+         {
+            "path": "InstallWindowsService"
         }
     ],
     "contributions": [

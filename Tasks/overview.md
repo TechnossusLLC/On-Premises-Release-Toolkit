@@ -25,6 +25,9 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 - Require SSL Redirect
 -- This task allows you to force an IIS Application to only allow an SSL connection.
 
+- Deploy Windows Service
+-- This task allows you to deploy a windows service.
+
 ### Roadmap
 - Coming Soon!
 
