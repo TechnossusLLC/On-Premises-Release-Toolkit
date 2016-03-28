@@ -89,6 +89,8 @@ If($backupDatabaseBeforeChanges -eq "true"){
 # Block On Possible Data Loss
 If($blockOnPossibleDataLoss -eq "true"){
     $deployOptions.BlockOnPossibleDataLoss = $true
+} Else {
+    $deployOptions.BlockOnPossibleDataLoss = $false
 }
 
 # Create New Database
