@@ -2,15 +2,16 @@
 // GENERATED FILE - DO NOT EDIT DIRECTLY
 // *******************************************************
 {
-  "loc.friendlyName": "Install Windows Service",
+  "loc.friendlyName": "Enable Windows Service",
   "loc.helpMarkDown": "",
-  "loc.description": "Installs a windows service to the machine of your choice.",
-  "loc.instanceNameFormat": "Install Windows Service",
+  "loc.description": "Enable/Install a windows service on the machine of your choice.",
+  "loc.instanceNameFormat": "Enable/Install $(serviceName) Windows Service",
   "loc.group.displayName.serviceAccount": "Service Account",
   "loc.group.displayName.advanced": "Advanced",
   "loc.input.label.serviceName": "Service Name",
   "loc.input.label.servicePath": "Service Path",
   "loc.input.label.serverName": "Server Name",
+  "loc.input.label.installIfNotExists": "Install If Not Exists",
   "loc.input.label.deployUser": "Deployment User Name",
   "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
   "loc.input.label.deployPass": "Deployment Password",

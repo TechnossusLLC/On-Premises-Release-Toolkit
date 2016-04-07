@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.4.1",
+    "version": "0.6.0",
     "publisher": "technossusllc",
     "public": true,
     "targets": [
@@ -59,11 +59,17 @@
         {
             "path": "UpdateConnectionString"
         },
-         {
+        {
             "path": "RequireSSLRedirect"
         },
-         {
-            "path": "InstallWindowsService"
+        {
+            "path": "RunSqlCommand"
+        },
+        {
+            "path": "EnableWindowsService"
+        },
+        {
+            "path": "DisableWindowsService"
         }
     ],
     "contributions": [
@@ -125,6 +131,36 @@
             ],
             "properties": {
                 "name": "RequireSSLRedirect"
+            }
+        },
+         {
+            "id": "run-sql-command",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "RunSqlCommand"
+            }
+        },
+        {
+            "id": "enable-windows-service",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "EnableWindowsService"
+            }
+        },
+        {
+            "id": "disable-windows-service",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DisableWindowsService"
             }
         }
     ]

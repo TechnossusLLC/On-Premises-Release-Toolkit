@@ -4,15 +4,6 @@ Param(
     $serviceName,
     
     [string] [Parameter(Mandatory = $true)]
-    $servicePath,
-    
-    [string] [Parameter(Mandatory = $false)]
-    $serviceAccountUser,
-    
-    [string] [Parameter(Mandatory = $false)]
-    $serviceAccountPass,
-    
-    [string] [Parameter(Mandatory = $true)]
     $serverName,
     
     [string] [Parameter(Mandatory = $false)]
@@ -37,26 +28,10 @@ invoke-command -session $session -scriptblock {
         Stop-Service $serviceName
         "Waiting 3 seconds to allow existing service to stop."
         Start-Sleep -s 3
-
-        $existingService.Delete()
-        "Waiting 5 seconds to allow service to be uninstalled."
-        Start-Sleep -s 5  
-    }
-
-    "Installing the service."
-    if($serviceAccountUser){
-        "Using service account."
-        $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $serviceAccountUser, $serviceAccountPass
-        New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
-    } else {
-        New-Service -BinaryPathName $servicePath -Name $serviceName -DisplayName $serviceName -StartupType Automatic
-    } 
-    "Installed the service."
-  
-    "Starting the service."
-    Start-Service $serviceName
-    
-    "Completed."
+    } Else 
+    {
+        "Service does not exist."
+    }    
  
 } -ArgumentList $serviceName, $servicePath, $serviceAccountUser, $serviceAccountPass
  

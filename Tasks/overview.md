@@ -25,11 +25,22 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 - Require SSL Redirect
 -- This task allows you to force an IIS Application to only allow an SSL connection.
 
-- Deploy Windows Service
--- This task allows you to deploy a windows service.
+- Run Sql Command
+-- Adds the ability to run an arbitrary Sql Command. This is useful if you need to reenable user permissions after restoring a database.
+
+- Enable Windows Service
+-- This task allows you to deploy a windows service and optionally install it if it doesn't exist.
+
+- Disable Windows Service
+-- This task allows you to disable a windows service. This is useful if you need to update the service 
 
 ### Roadmap
 - Coming Soon!
+
+## Release History
+
+- 0.6 - Add the ability to run Sql Commands during a release
+- 0.5 - Add the ability to enable/disable windows services as part of a build/release
 
 ### Quick steps to get started
 1. Open the Visual Studio Team Service account where you installed the extension.

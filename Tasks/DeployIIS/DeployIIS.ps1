@@ -89,7 +89,7 @@ invoke-command -session $session -scriptblock {
 
      while (-not $completed) {
         try {
-            New-WebAppPool -Name $name
+            New-WebAppPool -Name $name -Force
             Set-ItemProperty IIS:\AppPools\$name -name processModel -value @{userName="$serviceAccountName";identitytype=3}
             Set-ItemProperty IIS:\AppPools\$name managedRuntimeVersion v4.0    
             
