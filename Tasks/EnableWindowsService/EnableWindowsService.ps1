@@ -34,17 +34,19 @@ invoke-command -session $session -scriptblock {
        
     $existingService = Get-WmiObject -Class Win32_Service -Filter "Name='$serviceName'"
 
-    if(-Not $existingService -And $installIfNotExists -eq "true")
+    if(!$existingService)
     {
-        "Installing the service."
-        if($serviceAccountUser){
-            "Using service account."
-            $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $serviceAccountUser, $serviceAccountPass
-            New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
-        } else {
-            New-Service -BinaryPathName $servicePath -Name $serviceName -DisplayName $serviceName -StartupType Automatic
-        } 
-        "Installed the service."
+        if($installIfNotExists -ne "false"){
+            "Installing the service."
+            if($serviceAccountUser){
+                "Using service account."
+                $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $serviceAccountUser, $serviceAccountPass
+                New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
+            } else {
+                New-Service -BinaryPathName $servicePath -Name $serviceName -DisplayName $serviceName -StartupType Automatic
+            } 
+            "Installed the service."
+        }
   
     } Else {
         "Service already exists."    
