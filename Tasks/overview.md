@@ -38,9 +38,9 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 - Coming Soon!
 
 ## Release History
-
-- 0.6 - Add the ability to run Sql Commands during a release
-- 0.5 - Add the ability to enable/disable windows services as part of a build/release
+- 0.6.4  - Fix the Enable Service Account task so that it properly uses service accounts.
+- 0.6.0 - Add the ability to run Sql Commands during a release
+- 0.5.0 - Add the ability to enable/disable windows services as part of a build/release
 
 ### Quick steps to get started
 1. Open the Visual Studio Team Service account where you installed the extension.

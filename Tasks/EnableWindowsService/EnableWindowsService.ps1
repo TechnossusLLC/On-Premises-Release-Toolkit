@@ -40,8 +40,19 @@ invoke-command -session $session -scriptblock {
             "Installing the service."
             if($serviceAccountUser){
                 "Using service account."
-                $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $serviceAccountUser, $serviceAccountPass
-                New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
+                
+                if($serviceAccountPass)
+                {
+                    $password = $serviceAccountPass|ConvertTo-SecureString -AsPlainText -Force
+                    $cred = New-Object System.Management.Automation.PSCredential($serviceAccountUser, $password)
+                    New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
+                }
+                else
+                {
+                    $cred = New-Object System.Management.Automation.PSCredential($serviceAccountUser, (new-object System.Security.SecureString))
+                    New-Service -BinaryPathName $servicePath -Name $serviceName -Credential $cred -DisplayName $serviceName -StartupType Automatic
+                }
+                
             } else {
                 New-Service -BinaryPathName $servicePath -Name $serviceName -DisplayName $serviceName -StartupType Automatic
             } 
