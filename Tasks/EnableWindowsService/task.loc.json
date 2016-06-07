@@ -14,8 +14,8 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 1,
-    "Patch": 5
+    "Minor": 4,
+    "Patch": 1
   },
   "minimumAgentVersion": "1.90.0",
   "groups": [
@@ -84,12 +84,51 @@
       "helpMarkDown": "ms-resource:loc.input.help.serviceAccountUser"
     },
     {
+      "name": "displayName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.displayName",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.displayName",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "multiLine",
+      "label": "ms-resource:loc.input.label.description",
+      "defaultValue": "",
+      "required": false
+    },
+    {
       "name": "serviceAccountPass",
       "type": "string",
       "label": "ms-resource:loc.input.label.serviceAccountPass",
       "defaultValue": "",
       "groupName": "serviceAccount",
       "required": false
+    },
+    {
+      "name": "dependsOn",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.dependsOn",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.dependsOn",
+      "required": false
+    },
+    {
+      "name": "startupType",
+      "type": "pickList",
+      "label": "ms-resource:loc.input.label.startupType",
+      "defaultValue": "automatic",
+      "groupName": "advanced",
+      "required": true,
+      "options": {
+        "automatic": "Automatic",
+        "none": "None",
+        "system": "System",
+        "manual": "Manual"
+      }
     }
   ],
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",

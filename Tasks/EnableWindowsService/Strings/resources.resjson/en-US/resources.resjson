@@ -17,5 +17,11 @@
   "loc.input.label.deployPass": "Deployment Password",
   "loc.input.label.serviceAccountUser": "Service Account User Name",
   "loc.input.help.serviceAccountUser": "The username of the service account user.",
-  "loc.input.label.serviceAccountPass": "Service Account Password"
+  "loc.input.label.displayName": "Service Display Name",
+  "loc.input.help.displayName": "The display name for the service",
+  "loc.input.label.description": "Service Description",
+  "loc.input.label.serviceAccountPass": "Service Account Password",
+  "loc.input.label.dependsOn": "Depends On",
+  "loc.input.help.dependsOn": "The name of the service that this service depends on.",
+  "loc.input.label.startupType": "Service Startup Type"
 }

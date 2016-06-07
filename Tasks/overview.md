@@ -38,6 +38,8 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 - Coming Soon!
 
 ## Release History
+- 0.7.2 - Add the ability to set a description during the Enable Windows Service Task.
+- 0.7.0 - Add additional functionality to the Enable Windows Service Task. Allow default account to be used when deploying IIS App Pools.
 - 0.6.4  - Fix the Enable Service Account task so that it properly uses service accounts.
 - 0.6.0 - Add the ability to run Sql Commands during a release
 - 0.5.0 - Add the ability to enable/disable windows services as part of a build/release

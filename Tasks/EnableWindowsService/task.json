@@ -11,8 +11,8 @@
     "author": "Technossus LLC",
     "version": {
         "Major": 1,
-        "Minor": 1,
-        "Patch": 5
+        "Minor": 4,
+        "Patch": 1
     },
     "minimumAgentVersion": "1.90.0",
     "groups": [
@@ -80,6 +80,22 @@
             "groupName": "serviceAccount",
             "helpMarkDown": "The username of the service account user."
         },
+          {
+            "name": "displayName",
+            "type": "string",
+            "label": "Service Display Name",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "helpMarkDown":"The display name for the service",
+            "required": false
+        },
+          {
+            "name": "description",
+            "type": "multiLine",
+            "label": "Service Description",
+            "defaultValue": "",           
+            "required": false
+        },
         {
             "name": "serviceAccountPass",
             "type": "string",
@@ -87,7 +103,30 @@
             "defaultValue": "",
             "groupName": "serviceAccount",
             "required": false
-        }              
+        },
+         {
+            "name": "dependsOn",
+            "type": "string",
+            "label": "Depends On",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "helpMarkDown":"The name of the service that this service depends on.",
+            "required": false
+        },
+        {
+            "name": "startupType",
+            "type": "pickList",
+            "label": "Service Startup Type",
+            "defaultValue": "automatic",
+            "groupName": "advanced",
+            "required": true,
+            "options": {
+                "automatic": "Automatic",
+                "none": "None",
+                "system":"System",
+                "manual":"Manual"
+            }
+        }                 
     ],
     "instanceNameFormat": "Enable/Install $(serviceName) Windows Service",
     "execution": {
