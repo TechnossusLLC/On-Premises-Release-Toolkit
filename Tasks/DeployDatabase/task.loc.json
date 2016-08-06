@@ -14,7 +14,7 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 2,
-    "Minor": 0,
+    "Minor": 1,
     "Patch": 2
   },
   "demands": [
@@ -51,6 +51,23 @@
       "helpMarkDown": "ms-resource:loc.input.help.dacpacLocation"
     },
     {
+      "name": "specifyConfiguration",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.specifyConfiguration",
+      "defaultValue": "false",
+      "required": false,
+      "groupName": "advanced"
+    },
+    {
+      "name": "configLocation",
+      "type": "filePath",
+      "label": "ms-resource:loc.input.label.configLocation",
+      "required": true,
+      "visibleRule": "specifyConfiguration = true",
+      "helpMarkDown": "ms-resource:loc.input.help.configLocation",
+      "groupName": "advanced"
+    },
+    {
       "name": "additionalVariables",
       "type": "string",
       "label": "ms-resource:loc.input.label.additionalVariables",
@@ -64,6 +81,7 @@
       "label": "ms-resource:loc.input.label.allowIncompatiblePlatform",
       "defaultValue": "false",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     },
     {
@@ -72,6 +90,7 @@
       "label": "ms-resource:loc.input.label.backupDatabaseBeforeChanges",
       "defaultValue": "true",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     },
     {
@@ -80,6 +99,7 @@
       "label": "ms-resource:loc.input.label.blockOnPossibleDataLoss",
       "defaultValue": "true",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     },
     {
@@ -88,6 +108,7 @@
       "label": "ms-resource:loc.input.label.createNewDatabase",
       "defaultValue": "false",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     },
     {
@@ -96,6 +117,7 @@
       "label": "ms-resource:loc.input.label.deployDatabaseInSingleUserMode",
       "defaultValue": "false",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     },
     {
@@ -104,6 +126,7 @@
       "label": "ms-resource:loc.input.label.generateSmartDefaults",
       "defaultValue": "false",
       "groupName": "advanced",
+      "visibleRule": "specifyConfiguration = false",
       "required": false
     }
   ],

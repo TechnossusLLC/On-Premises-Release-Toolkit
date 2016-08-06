@@ -11,7 +11,7 @@
     "author": "Technossus LLC",
     "version": {
         "Major": 2,
-        "Minor": 0,
+        "Minor": 1,
         "Patch": 2
     },
     "demands": [
@@ -48,6 +48,23 @@
             "helpMarkDown": "The drop location of the built dacpac."
         },
         {
+            "name": "specifyConfiguration",
+            "type": "boolean",
+            "label": "Specify XML Publish Configuration",
+            "defaultValue": "false",
+            "required": false,
+            "groupName": "advanced"
+        },
+         {
+            "name": "configLocation",
+            "type": "filePath",
+            "label": "XML Config location",
+            "required": true,
+            "visibleRule": "specifyConfiguration = true",
+            "helpMarkDown": "The *.publish.xml file used to deploy the database",
+            "groupName": "advanced"
+        },
+        {
             "name": "additionalVariables",
             "type": "string",
             "label": "SqlCmd Variables",
@@ -55,12 +72,13 @@
             "groupName": "advanced",
             "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. 'foo1':'bar1','foo2':'bar2'"
         },
-         {
+        {
             "name": "allowIncompatiblePlatform",
             "type": "boolean",
             "label": "Allow Incompatible Platform",
             "defaultValue": "false",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         },
         {
@@ -69,38 +87,43 @@
             "label": "Backup Database Before Changes",
             "defaultValue": "true",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         },
-         {
+        {
             "name": "blockOnPossibleDataLoss",
             "type": "boolean",
             "label": "Block On Possible Data Loss",
             "defaultValue": "true",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         },
-         {
+        {
             "name": "createNewDatabase",
             "type": "boolean",
             "label": "Create New Database",
             "defaultValue": "false",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         },
-         {
+        {
             "name": "deployDatabaseInSingleUserMode",
             "type": "boolean",
             "label": "Deploy Database In Single User Mode",
             "defaultValue": "false",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         },
-         {
+        {
             "name": "generateSmartDefaults",
             "type": "boolean",
             "label": "Generate Smart Defaults",
             "defaultValue": "false",
             "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
             "required": false
         }
     ],

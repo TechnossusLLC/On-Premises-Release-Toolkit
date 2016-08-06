@@ -27,7 +27,13 @@
     $deployDatabaseInSingleUserMode,
     
     [string] [Parameter(Mandatory = $false)]
-    $generateSmartDefaults    
+    $generateSmartDefaults,
+
+    [string] [Parameter(Mandatory = $false)]
+    $specifyConfiguration,
+
+    [string] [Parameter(Mandatory = $false)]
+    $configLocation
 )
 
 if (! $dbServerName)
@@ -74,38 +80,48 @@ register-objectevent -in $dacService -eventname Message -source "msg" -action { 
 
 $dp = [Microsoft.SqlServer.Dac.DacPackage]::Load($dacpacLocation, [Microsoft.SqlServer.Dac.DacSchemaModelStorageType]::File)
 
-$deployOptions = New-Object Microsoft.SqlServer.Dac.DacDeployOptions
+Write-Host "Configuration Specified: $specifyConfiguration"
 
-# Allow Incompatible Platform
-If($allowIncompatiblePlatform -eq "true"){
-    $deployOptions.AllowIncompatiblePlatform = $true
-}
+# Check if we are building our own options or running a config file.
+if ($specifyConfiguration -ne "true")
+{
+    $deployOptions = New-Object Microsoft.SqlServer.Dac.DacDeployOptions
 
-# Backup Database Before Changes
-If($backupDatabaseBeforeChanges -eq "true"){
-    $deployOptions.BackupDatabaseBeforeChanges = $true
-}
+    # Allow Incompatible Platform
+    If($allowIncompatiblePlatform -eq "true"){
+        $deployOptions.AllowIncompatiblePlatform = $true
+    }
 
-# Block On Possible Data Loss
-If($blockOnPossibleDataLoss -eq "true"){
-    $deployOptions.BlockOnPossibleDataLoss = $true
-} Else {
-    $deployOptions.BlockOnPossibleDataLoss = $false
-}
+    # Backup Database Before Changes
+    If($backupDatabaseBeforeChanges -eq "true"){
+        $deployOptions.BackupDatabaseBeforeChanges = $true
+    }
 
-# Create New Database
-If($createNewDatabase -eq "true"){
-    $deployOptions.CreateNewDatabase = $true
-}
+    # Block On Possible Data Loss
+    If($blockOnPossibleDataLoss -eq "true"){
+        $deployOptions.BlockOnPossibleDataLoss = $true
+    } Else {
+        $deployOptions.BlockOnPossibleDataLoss = $false
+    }
 
-# Deploy Database In Single User Mode
-If($deployDatabaseInSingleUserMode -eq "true"){
-    $deployOptions.DeployDatabaseInSingleUserMode = $true
-}
+    # Create New Database
+    If($createNewDatabase -eq "true"){
+        $deployOptions.CreateNewDatabase = $true
+    }
 
-# Generate Smart Defaults
-If($generateSmartDefaults -eq "true"){
-    $deployOptions.GenerateSmartDefaults = $true
+    # Deploy Database In Single User Mode
+    If($deployDatabaseInSingleUserMode -eq "true"){
+        $deployOptions.DeployDatabaseInSingleUserMode = $true
+    }
+
+    # Generate Smart Defaults
+    If($generateSmartDefaults -eq "true"){
+        $deployOptions.GenerateSmartDefaults = $true
+    }
+} else {
+    $dacProfile = [Microsoft.SqlServer.Dac.DacProfile]::Load($configLocation)
+
+    $deployOptions=$dacProfile.DeployOptions
 }
 
 if($additionalVariables){
