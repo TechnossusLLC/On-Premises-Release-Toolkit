@@ -1,0 +1,9 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Version Assemblies",
+  "loc.description": "Allows you to version assemblies. Taken from https://intovsts.net",
+  "loc.instanceNameFormat": "Set Assembly Version",
+  "loc.input.label.versionNumber": "Version Number"
+}
