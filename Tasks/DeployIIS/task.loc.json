@@ -14,15 +14,15 @@
   "author": "Technossus LLC",
   "version": {
     "Major": 1,
-    "Minor": 5,
-    "Patch": 2
+    "Minor": 6,
+    "Patch": 4
   },
   "minimumAgentVersion": "1.90.0",
   "groups": [
     {
       "name": "advanced",
       "displayName": "ms-resource:loc.group.displayName.advanced",
-      "isExpanded": false
+      "isExpanded": true
     }
   ],
   "inputs": [
@@ -43,12 +43,25 @@
       "helpMarkDown": "ms-resource:loc.input.help.hostName"
     },
     {
+      "name": "serviceAccountType",
+      "type": "pickList",
+      "label": "ms-resource:loc.input.label.serviceAccountType",
+      "required": true,
+      "defaultValue": "groupManaged",
+      "options": {
+        "builtIn": "Built-In",
+        "groupManaged": "Group Managed Service Account (gMSA)"
+      },
+      "helpMarkDown": "ms-resource:loc.input.help.serviceAccountType"
+    },
+    {
       "name": "serviceAccountName",
       "type": "string",
       "label": "ms-resource:loc.input.label.serviceAccountName",
       "defaultValue": "",
       "helpMarkDown": "ms-resource:loc.input.help.serviceAccountName",
-      "required": false
+      "visibleRule": "serviceAccountType = groupManaged",
+      "required": true
     },
     {
       "name": "serverName",

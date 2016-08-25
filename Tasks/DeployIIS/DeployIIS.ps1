@@ -7,6 +7,9 @@ Param(
     $hostName,
 
     [string] [Parameter(Mandatory = $true)]
+    $serviceAccountType,
+
+    [string] [Parameter(Mandatory = $false)]
     $serviceAccountName,
     
     [string] [Parameter(Mandatory = $true)]
@@ -33,7 +36,7 @@ Import-Module .\CommonAuth.psm1
 $session = New-Deploy-Session -DeployUser $deployUser -DeployPass $deployPass -ServerName $serverName
  
 invoke-command -session $session -scriptblock {
-    Param([string]$name, [string]$hostName, [string]$serviceAccountName, [string]$certificateThumbprint, [string]$overridePath, [string]$enableThirtyTwoBit)
+    Param([string]$name, [string]$hostName, [string]$serviceAccountType, [string]$serviceAccountName, [string]$certificateThumbprint, [string]$overridePath, [string]$enableThirtyTwoBit)
  
     Set-ExecutionPolicy RemoteSigned
  
@@ -91,7 +94,9 @@ invoke-command -session $session -scriptblock {
         try {
             New-WebAppPool -Name $name -Force
 
-            if(serviceAccountName){
+            Write-Host "App Pool Account Type: $serviceAccountType" -Verbose
+
+            if([string]::IsNullOrEmpty($serviceAccountType) -Or ($serviceAccountType -eq "groupManaged")){
                 Set-ItemProperty IIS:\AppPools\$name -name processModel -value @{userName="$serviceAccountName";identitytype=3}
             }
             
@@ -145,7 +150,7 @@ invoke-command -session $session -scriptblock {
         }
      }
  
-} -ArgumentList $name, $hostName, $serviceAccountName, $certificateThumbprint, $overridePath, $enableThirtyTwoBit
+} -ArgumentList $name, $hostName, $serviceAccountType, $serviceAccountName, $certificateThumbprint, $overridePath, $enableThirtyTwoBit
  
     Remove-PSSession $session
 

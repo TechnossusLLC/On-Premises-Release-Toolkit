@@ -34,10 +34,16 @@ This extension add tasks for deploying IIS Applications, Virtual Directories, Da
 - Disable Windows Service
 -- This task allows you to disable a windows service. This is useful if you need to update the service 
 
+- Version Assemblies
+-- This tasks allows you to easily version your assemblies during build.
+
 ### Roadmap
 - Coming Soon!
 
 ## Release History
+- 0.8.7 - Add ability to use the built-in identity for App Pools.
+- 0.8.6 - Add assembly versioning to the toollkit.
+- 0.8.0 - Allow a configuration fille to be specified during database deployment time instead of using the predefined options.
 - 0.7.2 - Add the ability to set a description during the Enable Windows Service Task.
 - 0.7.0 - Add additional functionality to the Enable Windows Service Task. Allow default account to be used when deploying IIS App Pools.
 - 0.6.4  - Fix the Enable Service Account task so that it properly uses service accounts.

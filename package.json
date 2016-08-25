@@ -39,6 +39,7 @@
     "shelljs": "^0.3.0",
     "through2": "^0.6.3",
     "validator": "^3.33.0",
+     "typescript": "1.8.7",
     "vso-task-lib": "^0.5.1"
   },
   "dependencies": {

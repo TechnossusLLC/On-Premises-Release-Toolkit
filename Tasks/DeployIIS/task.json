@@ -11,15 +11,15 @@
     "author": "Technossus LLC",
     "version": {
         "Major": 1,
-        "Minor": 5,
-        "Patch": 2
+        "Minor": 6,
+        "Patch": 4
     },
     "minimumAgentVersion": "1.90.0",
     "groups": [
         {
             "name": "advanced",
             "displayName": "Advanced",
-            "isExpanded": false
+            "isExpanded": true
         }
     ],
     "inputs": [
@@ -36,8 +36,20 @@
             "label": "Hostname",
             "defaultValue": "",
             "required": true,
-             "groupName": "advanced",
+            "groupName": "advanced",
             "helpMarkDown": "Host name to be bound to the IIS Application."
+        },
+        {
+            "name": "serviceAccountType",
+            "type": "pickList",
+            "label": "Application Pool Identity",
+            "required": true,
+            "defaultValue": "groupManaged",
+            "options": {
+                "builtIn": "Built-In",
+                "groupManaged": "Group Managed Service Account (gMSA)"
+            },
+            "helpMarkDown": "Authentication mechanism for accessing the physical path of the website."
         },
         {
             "name": "serviceAccountName",
@@ -45,7 +57,8 @@
             "label": "Service Account Name",
             "defaultValue": "",
             "helpMarkDown": "Name of the Managed Service Account that will be used for the IIS App pool.",
-            "required": false
+            "visibleRule": "serviceAccountType = groupManaged",
+            "required": true
         },
         {
             "name": "serverName",
@@ -91,7 +104,7 @@
             "type": "boolean",
             "label": "Enable 32-bit mode",
             "defaultValue": "false",
-            "groupName": "advanced",            
+            "groupName": "advanced",
             "required": false
         }
     ],

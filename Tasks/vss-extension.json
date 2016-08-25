@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "on-premises-build-tasks",
     "name": "On-Premises Release Toolkit",
-    "version": "0.8.2",
+    "version": "0.8.7",
     "publisher": "technossusllc",
     "public": true,
     "targets": [
@@ -72,7 +72,7 @@
             "path": "DisableWindowsService"
         },
         {
-            "path": "VersionAssemblies"
+            "path": "TechnossusVersionAssemblies"
         }
     ],
     "contributions": [
@@ -167,13 +167,13 @@
             }
         },
         {
-            "id": "version-assemblies",
+            "id": "technossus-version-assemblies",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "VersionAssemblies"
+                "name": "TechnossusVersionAssemblies"
             }
         }
     ]

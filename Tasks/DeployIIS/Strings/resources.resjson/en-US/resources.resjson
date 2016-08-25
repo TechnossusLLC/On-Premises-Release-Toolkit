@@ -10,6 +10,8 @@
   "loc.input.label.name": "IIS Application Name",
   "loc.input.label.hostName": "Hostname",
   "loc.input.help.hostName": "Host name to be bound to the IIS Application.",
+  "loc.input.label.serviceAccountType": "Application Pool Identity",
+  "loc.input.help.serviceAccountType": "Authentication mechanism for accessing the physical path of the website.",
   "loc.input.label.serviceAccountName": "Service Account Name",
   "loc.input.help.serviceAccountName": "Name of the Managed Service Account that will be used for the IIS App pool.",
   "loc.input.label.serverName": "Server Name",

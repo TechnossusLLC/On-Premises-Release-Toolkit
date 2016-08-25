@@ -1,8 +1,8 @@
 {
-    "id": "1586ddbb-bded-4541-a9e3-154f66d98079",
-    "name": "VersionAssemblies",
+    "id": "17b5420c-0773-453e-901a-a94bf52e37eb",
+    "name": "TechnossusVersionAssemblies",
     "friendlyName": "Version Assemblies",
-    "description": "Allows you to version assemblies. Taken from https://intovsts.net",
+    "description": "Allows you to version assemblies before building your solution.",
     "author": "Technossus LLC",
     "category": "Utility",
     "visibility": [
@@ -11,19 +11,20 @@
     "demands": [],
     "version": {
         "Major": "1",
-        "Minor": "2",
-        "Patch": "0"
+        "Minor": "3",
+        "Patch": "2"
     },
    
     "minimumAgentVersion": "1.83.0",
     "instanceNameFormat": "Set Assembly Version",
     "inputs": [
         {
-            "name": "versionNumber",
+            "name": "productVersion",
             "type": "string",
             "label": "Version Number",
             "defaultValue": "",
-            "required": true
+            "required": true,
+            "helpMarkDown":"This should be in the format of $(Major).$(Minor).$(Patch).$(Build). If you set your build number format to $(Year:yy)$(DayOfYear)$(rev:.r), you can just use 1.0.$(Build.BuildNumber) as your assembly version."
         }
     ],
     "execution": {
