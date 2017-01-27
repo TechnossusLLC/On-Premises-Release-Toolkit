@@ -22,6 +22,7 @@ Other than that, the whole process is pretty seamless
 4. [Update App Settings](updateappsettings.md)
 5. [Update Connection String](updateconnectionstring.md)
 6. [Require SSL Redirect](requiresslredirect.md)
+7. [Deploy Windows Service](deploywindowsservice.md)
 
 
 ## Release History
