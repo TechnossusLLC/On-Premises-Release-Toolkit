@@ -85,7 +85,7 @@ invoke-command -session $session -scriptblock {
     }
 
     if($description){
-        Set-Service -Description $description
+        Set-Service $serviceName -Description $description
     }
 
     if($displayName){
