@@ -1,0 +1,76 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "b4f0cca8-bf1d-4844-b103-0d3deecc35e4",
+  "name": "RequireSSLRedirect",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Deploy",
+  "visibility": [
+    "Release"
+  ],
+  "author": "Technossus LLC",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 5
+  },
+  "minimumAgentVersion": "1.90.0",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "name",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.name",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "deployUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployUser",
+      "required": false,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.deployUser"
+    },
+    {
+      "name": "deployPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployPass",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "installWebPlatformInstaller",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.installWebPlatformInstaller",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\RequireSSLRedirect.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

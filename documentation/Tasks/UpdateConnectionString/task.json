@@ -1,0 +1,78 @@
+{
+    "id": "2d15b88e-f58b-48dd-8b17-e8f35594e4ab",
+    "name": "UpdateConnectionString",
+    "friendlyName": "Update Connection String",
+    "description": "Allows connection strings to be updated in a web.config or app.config",
+    "author": "Technossus LLC",
+    "category": "Utility",
+    "visibility": [
+        "Release"
+    ],
+    "demands": [],
+    "version": {
+        "Major": "1",
+        "Minor": "1",
+        "Patch": "0"
+    },
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "minimumAgentVersion": "1.83.0",
+    "instanceNameFormat": "UpdateAppSettings $(message)",
+    "inputs": [
+        {
+            "name": "webConfig",
+            "type": "string",
+            "label": "Web config path",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The path of the config file on the destination machine"
+        },
+        {
+            "name": "connectionStringName",
+            "type": "string",
+            "label": "Name",
+            "required": true
+        },
+        {
+            "name": "newConnectionStringValue",
+            "type": "string",
+            "label": "Value",
+            "required": true
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        }
+    ],
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\UpdateConnectionStrings.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

@@ -1,0 +1,80 @@
+﻿{
+    "id": "bd08eadf-5b48-4ad2-a85d-334f9b86755e",
+    "name": "IISVirtualDirectoryDeployment",
+    "friendlyName": "IIS Virtual Directory Deployment",
+    "description": "Tear down and generate a new Virtual Directory on any machine with IIS 8.",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 1,
+        "Minor": 1,
+        "Patch": 6
+    },
+    "minimumAgentVersion": "1.90.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "parentName",
+            "type": "string",
+            "label": "IIS Parent Application Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "name",
+            "type": "string",
+            "label": "Virtual Directory Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Path of the Virtual Directory under the IIS Application"
+        },
+        {
+            "name": "path",
+            "type": "string",
+            "label": "Application Name",
+            "required": true,
+            "helpMarkDown": "This folder will live under the path C:\\Apps."
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        }
+    ],
+    "instanceNameFormat": "IIS Deployment",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\DeployVirtualDirectory.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

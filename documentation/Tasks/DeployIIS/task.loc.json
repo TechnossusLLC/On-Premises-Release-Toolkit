@@ -1,0 +1,122 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "d7054920-9d3a-11e5-8d5a-3550b6c8f69f",
+  "name": "IISApplicationDeployment",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Deploy",
+  "visibility": [
+    "Release"
+  ],
+  "author": "Technossus LLC",
+  "version": {
+    "Major": 1,
+    "Minor": 6,
+    "Patch": 4
+  },
+  "minimumAgentVersion": "1.90.0",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": true
+    }
+  ],
+  "inputs": [
+    {
+      "name": "name",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.name",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "hostName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.hostName",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.hostName"
+    },
+    {
+      "name": "serviceAccountType",
+      "type": "pickList",
+      "label": "ms-resource:loc.input.label.serviceAccountType",
+      "required": true,
+      "defaultValue": "groupManaged",
+      "options": {
+        "builtIn": "Built-In",
+        "groupManaged": "Group Managed Service Account (gMSA)"
+      },
+      "helpMarkDown": "ms-resource:loc.input.help.serviceAccountType"
+    },
+    {
+      "name": "serviceAccountName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serviceAccountName",
+      "defaultValue": "",
+      "helpMarkDown": "ms-resource:loc.input.help.serviceAccountName",
+      "visibleRule": "serviceAccountType = groupManaged",
+      "required": true
+    },
+    {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "certificateThumbprint",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.certificateThumbprint",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "deployUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployUser",
+      "required": false,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.deployUser"
+    },
+    {
+      "name": "deployPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployPass",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "overridePath",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.overridePath",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.overridePath",
+      "required": false
+    },
+    {
+      "name": "enableThirtyTwoBit",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.enableThirtyTwoBit",
+      "defaultValue": "false",
+      "groupName": "advanced",
+      "required": false
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\DeployIIS.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

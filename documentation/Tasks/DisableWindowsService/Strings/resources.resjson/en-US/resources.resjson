@@ -1,0 +1,15 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Disable Windows Service",
+  "loc.helpMarkDown": "",
+  "loc.description": "Disables a windows service on the machine of your choice.",
+  "loc.instanceNameFormat": "Disable $(serviceName) Service",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.serviceName": "Service Name",
+  "loc.input.label.serverName": "Server Name",
+  "loc.input.label.deployUser": "Deployment User Name",
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password"
+}

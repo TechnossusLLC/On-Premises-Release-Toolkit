@@ -1,0 +1,139 @@
+﻿{
+    "id": "a58e7b79-a8c8-4ada-9208-3b07ef97190d",
+    "name": "EnableWindowsService",
+    "friendlyName": "Enable Windows Service",
+    "description": "Enable/Install a windows service on the machine of your choice.",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 1,
+        "Minor": 4,
+        "Patch": 2
+    },
+    "minimumAgentVersion": "1.90.0",
+    "groups": [
+          {
+            "name": "serviceAccount",
+            "displayName": "Service Account",
+            "isExpanded": false
+        },
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "serviceName",
+            "type": "string",
+            "label": "Service Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "servicePath",
+            "type": "string",
+            "label": "Service Path",
+            "defaultValue": "",
+            "required": true
+        },
+         {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "installIfNotExists",
+            "type": "boolean",
+            "label": "Install If Not Exists",
+            "defaultValue": "false",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        },
+         {
+            "name": "serviceAccountUser",
+            "type": "string",
+            "label": "Service Account User Name",
+            "required": false,
+            "groupName": "serviceAccount",
+            "helpMarkDown": "The username of the service account user."
+        },
+          {
+            "name": "displayName",
+            "type": "string",
+            "label": "Service Display Name",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "helpMarkDown":"The display name for the service",
+            "required": false
+        },
+          {
+            "name": "description",
+            "type": "multiLine",
+            "label": "Service Description",
+            "defaultValue": "",           
+            "required": false
+        },
+        {
+            "name": "serviceAccountPass",
+            "type": "string",
+            "label": "Service Account Password",
+            "defaultValue": "",
+            "groupName": "serviceAccount",
+            "required": false
+        },
+         {
+            "name": "dependsOn",
+            "type": "string",
+            "label": "Depends On",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "helpMarkDown":"The name of the service that this service depends on.",
+            "required": false
+        },
+        {
+            "name": "startupType",
+            "type": "pickList",
+            "label": "Service Startup Type",
+            "defaultValue": "automatic",
+            "groupName": "advanced",
+            "required": true,
+            "options": {
+                "automatic": "Automatic",
+                "none": "None",
+                "system":"System",
+                "manual":"Manual"
+            }
+        }                 
+    ],
+    "instanceNameFormat": "Enable/Install $(serviceName) Windows Service",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\EnableWindowsService.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

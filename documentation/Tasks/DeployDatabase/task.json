@@ -1,0 +1,138 @@
+﻿{
+    "id": "ef103b61-90e2-4901-b64e-f75475fe20f6",
+    "name": "DatabaseDeployment",
+    "friendlyName": "Database Deployment",
+    "description": "Deploy a database using a dacpac.",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 2,
+        "Minor": 1,
+        "Patch": 2
+    },
+    "demands": [
+        "SqlPackage"
+    ],
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "minimumAgentVersion": "1.90.0",
+    "inputs": [
+        {
+            "name": "dbServerName",
+            "type": "string",
+            "label": "Database Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "databaseName",
+            "type": "string",
+            "label": "Database Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "dacpacLocation",
+            "type": "filePath",
+            "label": "Dacpac Location",
+            "required": true,
+            "helpMarkDown": "The drop location of the built dacpac."
+        },
+        {
+            "name": "specifyConfiguration",
+            "type": "boolean",
+            "label": "Specify XML Publish Configuration",
+            "defaultValue": "false",
+            "required": false,
+            "groupName": "advanced"
+        },
+         {
+            "name": "configLocation",
+            "type": "filePath",
+            "label": "XML Config location",
+            "required": true,
+            "visibleRule": "specifyConfiguration = true",
+            "helpMarkDown": "The *.publish.xml file used to deploy the database",
+            "groupName": "advanced"
+        },
+        {
+            "name": "additionalVariables",
+            "type": "string",
+            "label": "SqlCmd Variables",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkdown": "Please enter any sqlCmd variables as comma separated key/value pairs ex. 'foo1':'bar1','foo2':'bar2'"
+        },
+        {
+            "name": "allowIncompatiblePlatform",
+            "type": "boolean",
+            "label": "Allow Incompatible Platform",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        },
+        {
+            "name": "backupDatabaseBeforeChanges",
+            "type": "boolean",
+            "label": "Backup Database Before Changes",
+            "defaultValue": "true",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        },
+        {
+            "name": "blockOnPossibleDataLoss",
+            "type": "boolean",
+            "label": "Block On Possible Data Loss",
+            "defaultValue": "true",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        },
+        {
+            "name": "createNewDatabase",
+            "type": "boolean",
+            "label": "Create New Database",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        },
+        {
+            "name": "deployDatabaseInSingleUserMode",
+            "type": "boolean",
+            "label": "Deploy Database In Single User Mode",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        },
+        {
+            "name": "generateSmartDefaults",
+            "type": "boolean",
+            "label": "Generate Smart Defaults",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "visibleRule": "specifyConfiguration = false",
+            "required": false
+        }
+    ],
+    "instanceNameFormat": "Database Deployment",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\DeployDatabase.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

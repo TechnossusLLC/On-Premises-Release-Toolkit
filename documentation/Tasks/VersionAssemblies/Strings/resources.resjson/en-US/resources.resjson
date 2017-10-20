@@ -1,0 +1,10 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Version Assemblies",
+  "loc.description": "Allows you to version assemblies before building your solution.",
+  "loc.instanceNameFormat": "Set Assembly Version",
+  "loc.input.label.productVersion": "Version Number",
+  "loc.input.help.productVersion": "This should be in the format of $(Major).$(Minor).$(Patch).$(Build). If you set your build number format to $(Year:yy)$(DayOfYear)$(rev:.r), you can just use 1.0.$(Build.BuildNumber) as your assembly version."
+}

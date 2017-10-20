@@ -1,0 +1,40 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "17b5420c-0773-453e-901a-a94bf52e37eb",
+  "name": "TechnossusVersionAssemblies",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "author": "Technossus LLC",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "1",
+    "Minor": "3",
+    "Patch": "2"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "inputs": [
+    {
+      "name": "productVersion",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.productVersion",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "ms-resource:loc.input.help.productVersion"
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\VersionAssemblies.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  },
+  "helpMarkDown": "ms-resource:loc.helpMarkDown"
+}

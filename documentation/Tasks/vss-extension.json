@@ -1,0 +1,180 @@
+{
+    "manifestVersion": 1,
+    "id": "on-premises-build-tasks",
+    "name": "On-Premises Release Toolkit",
+    "version": "0.8.8",
+    "publisher": "technossusllc",
+    "public": true,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Tools for deploying web applications and databases on-premises.",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "extension-icon.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "LICENSE.txt"
+        }
+    },
+    "links": {
+        "home": {
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit"
+        },
+        "support": {
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit/issues"
+        },
+        "repository": {
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit"
+        },
+        "issues": {
+            "uri": "https://github.com/TechnossusLLC/On-Premises-Release-Toolkit/issues"
+        }
+    },
+    "branding": {
+        "color": "#ED2939",
+        "theme": "dark"
+    },
+    "files": [
+        {
+            "path": "DatabaseDeployment"
+        },
+        {
+            "path": "IISApplicationDeployment"
+        },
+        {
+            "path": "IISVirtualDirectoryDeployment"
+        },
+        {
+            "path": "UpdateAppSettings"
+        },
+        {
+            "path": "UpdateConnectionString"
+        },
+        {
+            "path": "RequireSSLRedirect"
+        },
+        {
+            "path": "RunSqlCommand"
+        },
+        {
+            "path": "EnableWindowsService"
+        },
+        {
+            "path": "DisableWindowsService"
+        },
+        {
+            "path": "TechnossusVersionAssemblies"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "deploy-database",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DatabaseDeployment"
+            }
+        },
+        {
+            "id": "deploy-iis",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "IISApplicationDeployment"
+            }
+        },
+        {
+            "id": "deploy-virtual-directory",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "IISVirtualDirectoryDeployment"
+            }
+        },
+        {
+            "id": "update-app-settings",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "UpdateAppSettings"
+            }
+        },
+        {
+            "id": "update-connection-string",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "UpdateConnectionString"
+            }
+        },
+        {
+            "id": "require-ssl-redirect",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "RequireSSLRedirect"
+            }
+        },
+        {
+            "id": "run-sql-command",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "RunSqlCommand"
+            }
+        },
+        {
+            "id": "enable-windows-service",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "EnableWindowsService"
+            }
+        },
+        {
+            "id": "disable-windows-service",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DisableWindowsService"
+            }
+        },
+        {
+            "id": "technossus-version-assemblies",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "TechnossusVersionAssemblies"
+            }
+        }
+    ]
+}

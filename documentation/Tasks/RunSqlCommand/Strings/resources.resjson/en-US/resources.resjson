@@ -1,0 +1,16 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Run Sql Command",
+  "loc.helpMarkDown": "Replace with markdown to show in help",
+  "loc.description": "Allows you to run a Sql Command without needing a script",
+  "loc.instanceNameFormat": "Run Sql Command on $(databaseName)",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.serverName": "Server Name",
+  "loc.input.label.databaseName": "Database Name",
+  "loc.input.label.command": "Sql Command",
+  "loc.input.label.deployUser": "Deployment User Name",
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password"
+}

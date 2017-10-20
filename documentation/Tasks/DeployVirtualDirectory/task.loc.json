@@ -1,0 +1,83 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "bd08eadf-5b48-4ad2-a85d-334f9b86755e",
+  "name": "IISVirtualDirectoryDeployment",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Deploy",
+  "visibility": [
+    "Release"
+  ],
+  "author": "Technossus LLC",
+  "version": {
+    "Major": 1,
+    "Minor": 1,
+    "Patch": 6
+  },
+  "minimumAgentVersion": "1.90.0",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "parentName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.parentName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "ms-resource:loc.input.help.name"
+    },
+    {
+      "name": "path",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.path",
+      "required": true,
+      "helpMarkDown": "ms-resource:loc.input.help.path"
+    },
+    {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "deployUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployUser",
+      "required": false,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.deployUser"
+    },
+    {
+      "name": "deployPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployPass",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "required": false
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\DeployVirtualDirectory.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

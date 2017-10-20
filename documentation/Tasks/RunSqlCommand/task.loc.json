@@ -1,0 +1,73 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "3bb3e250-f533-11e5-930d-c5573c0da11e",
+  "name": "RunSqlCommand",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "author": "Christopher Woolum",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Utility",
+  "visibility": [
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "4"
+  },
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
+  ],
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "inputs": [
+    {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "required": true
+    },
+    {
+      "name": "databaseName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.databaseName",
+      "required": true
+    },
+    {
+      "name": "command",
+      "type": "multiLine",
+      "label": "ms-resource:loc.input.label.command",
+      "required": true
+    },
+    {
+      "name": "deployUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployUser",
+      "required": false,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.deployUser"
+    },
+    {
+      "name": "deployPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployPass",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "required": false
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\RunSqlCommand.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

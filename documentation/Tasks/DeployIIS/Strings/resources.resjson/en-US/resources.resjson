@@ -1,0 +1,25 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "IIS Application Deployment",
+  "loc.helpMarkDown": "",
+  "loc.description": "Tear down and generate a new IIS Application on any machine with IIS 8.",
+  "loc.instanceNameFormat": "IIS Deployment",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.name": "IIS Application Name",
+  "loc.input.label.hostName": "Hostname",
+  "loc.input.help.hostName": "Host name to be bound to the IIS Application.",
+  "loc.input.label.serviceAccountType": "Application Pool Identity",
+  "loc.input.help.serviceAccountType": "Authentication mechanism for accessing the physical path of the website.",
+  "loc.input.label.serviceAccountName": "Service Account Name",
+  "loc.input.help.serviceAccountName": "Name of the Managed Service Account that will be used for the IIS App pool.",
+  "loc.input.label.serverName": "Server Name",
+  "loc.input.label.certificateThumbprint": "SSL Cert Thumbprint",
+  "loc.input.label.deployUser": "Deployment User Name",
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password",
+  "loc.input.label.overridePath": "Path Override",
+  "loc.input.help.overridePath": "By default, the application will be deployed to C:\\Apps\\{App Name}. You can override this to be the path of your choosing.",
+  "loc.input.label.enableThirtyTwoBit": "Enable 32-bit mode"
+}

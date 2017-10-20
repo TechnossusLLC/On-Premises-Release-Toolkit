@@ -1,0 +1,78 @@
+{
+    "id": "f1bc3a30-a4ec-11e5-99c4-5f908e4518fb",
+    "name": "UpdateAppSettings",
+    "friendlyName": "Update App Settings",
+    "description": "Allows App settings to be updated in a web.config or app.config",
+    "author": "Technossus LLC",
+    "category": "Utility",
+    "visibility": [
+        "Release"
+    ],
+    "demands": [],
+    "version": {
+        "Major": "1",
+        "Minor": "1",
+        "Patch": "0"
+    },
+    "minimumAgentVersion": "1.83.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "instanceNameFormat": "UpdateAppSettings $(message)",
+    "inputs": [
+        {
+            "name": "webConfig",
+            "type": "string",
+            "label": "Web config path",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The path of the config file on the destination machine"
+        },
+        {
+            "name": "key",
+            "type": "string",
+            "label": "Key",
+            "required": true
+        },
+        {
+            "name": "value",
+            "type": "string",
+            "label": "Value",
+            "required": true
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        }
+    ],
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\UpdateAppSettings.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

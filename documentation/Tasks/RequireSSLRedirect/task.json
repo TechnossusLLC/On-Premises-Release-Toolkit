@@ -1,0 +1,73 @@
+﻿{
+    "id": "b4f0cca8-bf1d-4844-b103-0d3deecc35e4",
+    "name": "RequireSSLRedirect",
+    "friendlyName": "Enable SSL Redirect",
+    "description": "Adds SSL redirect to any site so that if it is accessed with a non-SSL binding, it will redirect to the SSL version",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 5
+    },
+    "minimumAgentVersion": "1.90.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "name",
+            "type": "string",
+            "label": "IIS Application Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        },
+        {
+            "name": "installWebPlatformInstaller",
+            "type": "boolean",
+            "label": "Install Web Platform Installer",
+            "defaultValue": "false",
+            "groupName": "advanced",
+            "required": false
+        }
+    ],
+    "instanceNameFormat": "Enable SSL Redirect",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\RequireSSLRedirect.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Update App Settings",
+  "loc.description": "Allows App settings to be updated in a web.config or app.config",
+  "loc.instanceNameFormat": "UpdateAppSettings $(message)",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.webConfig": "Web config path",
+  "loc.input.help.webConfig": "The path of the config file on the destination machine",
+  "loc.input.label.key": "Key",
+  "loc.input.label.value": "Value",
+  "loc.input.label.serverName": "Server Name",
+  "loc.input.label.deployUser": "Deployment User Name",
+  "loc.input.help.deployUser": "The username of the deployment user. If not entered, the service account for the build host will be used.",
+  "loc.input.label.deployPass": "Deployment Password"
+}

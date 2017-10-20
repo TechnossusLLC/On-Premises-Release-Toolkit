@@ -1,0 +1,65 @@
+﻿{
+    "id": "524c2862-a497-46fa-88e8-c3a4a72ff8ae",
+    "name": "DisableWindowsService",
+    "friendlyName": "Disable Windows Service",
+    "description": "Disables a windows service on the machine of your choice.",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "visibility": [
+        "Release"
+    ],
+    "author": "Technossus LLC",
+    "version": {
+        "Major": 1,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "minimumAgentVersion": "1.90.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        {
+            "name": "serviceName",
+            "type": "string",
+            "label": "Service Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "serverName",
+            "type": "string",
+            "label": "Server Name",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "deployUser",
+            "type": "string",
+            "label": "Deployment User Name",
+            "required": false,
+            "groupName": "advanced",
+            "helpMarkDown": "The username of the deployment user. If not entered, the service account for the build host will be used."
+        },
+        {
+            "name": "deployPass",
+            "type": "string",
+            "label": "Deployment Password",
+            "defaultValue": "",
+            "groupName": "advanced",
+            "required": false
+        }
+    ],
+    "instanceNameFormat": "Disable $(serviceName) Service",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\DisableWindowsService.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

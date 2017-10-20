@@ -1,0 +1,24 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "loc.friendlyName": "Database Deployment",
+  "loc.helpMarkDown": "",
+  "loc.description": "Deploy a database using a dacpac.",
+  "loc.instanceNameFormat": "Database Deployment",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.dbServerName": "Database Server Name",
+  "loc.input.label.databaseName": "Database Name",
+  "loc.input.label.dacpacLocation": "Dacpac Location",
+  "loc.input.help.dacpacLocation": "The drop location of the built dacpac.",
+  "loc.input.label.specifyConfiguration": "Specify XML Publish Configuration",
+  "loc.input.label.configLocation": "XML Config location",
+  "loc.input.help.configLocation": "The *.publish.xml file used to deploy the database",
+  "loc.input.label.additionalVariables": "SqlCmd Variables",
+  "loc.input.label.allowIncompatiblePlatform": "Allow Incompatible Platform",
+  "loc.input.label.backupDatabaseBeforeChanges": "Backup Database Before Changes",
+  "loc.input.label.blockOnPossibleDataLoss": "Block On Possible Data Loss",
+  "loc.input.label.createNewDatabase": "Create New Database",
+  "loc.input.label.deployDatabaseInSingleUserMode": "Deploy Database In Single User Mode",
+  "loc.input.label.generateSmartDefaults": "Generate Smart Defaults"
+}

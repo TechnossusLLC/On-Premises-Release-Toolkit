@@ -1,0 +1,142 @@
+// *******************************************************
+// GENERATED FILE - DO NOT EDIT DIRECTLY
+// *******************************************************
+{
+  "id": "a58e7b79-a8c8-4ada-9208-3b07ef97190d",
+  "name": "EnableWindowsService",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Deploy",
+  "visibility": [
+    "Release"
+  ],
+  "author": "Technossus LLC",
+  "version": {
+    "Major": 1,
+    "Minor": 4,
+    "Patch": 2
+  },
+  "minimumAgentVersion": "1.90.0",
+  "groups": [
+    {
+      "name": "serviceAccount",
+      "displayName": "ms-resource:loc.group.displayName.serviceAccount",
+      "isExpanded": false
+    },
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "serviceName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serviceName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "servicePath",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.servicePath",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "serverName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serverName",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "installIfNotExists",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.installIfNotExists",
+      "defaultValue": "false",
+      "required": true
+    },
+    {
+      "name": "deployUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployUser",
+      "required": false,
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.deployUser"
+    },
+    {
+      "name": "deployPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.deployPass",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "required": false
+    },
+    {
+      "name": "serviceAccountUser",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serviceAccountUser",
+      "required": false,
+      "groupName": "serviceAccount",
+      "helpMarkDown": "ms-resource:loc.input.help.serviceAccountUser"
+    },
+    {
+      "name": "displayName",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.displayName",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.displayName",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "multiLine",
+      "label": "ms-resource:loc.input.label.description",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "serviceAccountPass",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.serviceAccountPass",
+      "defaultValue": "",
+      "groupName": "serviceAccount",
+      "required": false
+    },
+    {
+      "name": "dependsOn",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.dependsOn",
+      "defaultValue": "",
+      "groupName": "advanced",
+      "helpMarkDown": "ms-resource:loc.input.help.dependsOn",
+      "required": false
+    },
+    {
+      "name": "startupType",
+      "type": "pickList",
+      "label": "ms-resource:loc.input.label.startupType",
+      "defaultValue": "automatic",
+      "groupName": "advanced",
+      "required": true,
+      "options": {
+        "automatic": "Automatic",
+        "none": "None",
+        "system": "System",
+        "manual": "Manual"
+      }
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\EnableWindowsService.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
